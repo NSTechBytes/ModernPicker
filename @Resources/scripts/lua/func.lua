@@ -99,30 +99,55 @@ function generatePalette(hex)
         return clamp(r + factor), clamp(g + factor), clamp(b + factor)
     end
 
+    -- Determine the dominant color component (red, green, blue, or gray)
+    local function dominantColor(r, g, b)
+        if r == g and g == b then
+            return "gray"
+        elseif r >= g and r >= b then
+            return "red"
+        elseif g >= r and g >= b then
+            return "green"
+        else
+            return "blue"
+        end
+    end
+
+    -- Generate shades based on dominant color
+    local function generateShades(r, g, b, factor)
+        local shades = {}
+        for i = -2, 2 do
+            local adjustment = factor * i
+            local nr, ng, nb = shadeColor(r, g, b, adjustment)
+            table.insert(shades, rgbToHex(nr, ng, nb))
+        end
+        return shades
+    end
+
     -- Convert hex to RGB
     local r, g, b = hexToRGB(hex)
+    local domColor = dominantColor(r, g, b)
 
-    -- Generate a single palette (5 colors: Original, Darker, Lighter, Complementary, Triadic)
-    local palette = {
-        hex,                                 -- Original color
-        rgbToHex(shadeColor(r, g, b, -30)),   -- Darker shade
-        rgbToHex(shadeColor(r, g, b, 30)),    -- Lighter shade
-        rgbToHex(255 - r, 255 - g, 255 - b),  -- Complementary
-        rgbToHex(g, b, r)                     -- Triadic
-    }
+    -- Generate shades based on the dominant color
+    local palette
+    if domColor == "gray" then
+        palette = generateShades(r, g, b, 20)  -- Gray shades
+    elseif domColor == "red" then
+        palette = generateShades(r, g, b, 40)  -- Red shades
+    elseif domColor == "green" then
+        palette = generateShades(r, g, b, 40)  -- Green shades
+    else
+        palette = generateShades(r, g, b, 40)  -- Blue shades
+    end
 
     -- Print the palette and set variables in Rainmeter
     for i, color in ipairs(palette) do
         local varName = "Palettes_Color" .. i
         print(varName .. ": " .. color)
         SKIN:Bang("!SetVariable", varName, color)
-		SKIN:Bang('!UpdateMeter', '*')
-		SKIN:Bang('!Redraw')
+        SKIN:Bang("!WriteKeyValue", "Variables", varName, color)
     end
+
+    -- Update all meters and redraw after setting variables
+    SKIN:Bang('!UpdateMeter', '*')
+    SKIN:Bang('!Redraw')
 end
-
-
-
-
-
-
