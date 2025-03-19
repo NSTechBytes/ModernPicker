@@ -142,10 +142,25 @@ function generatePalette(hex)
     -- Print the palette and set variables in Rainmeter
     for i, color in ipairs(palette) do
         local varName = "Palettes_Color" .. i
+        local meterName = "Palettes_Color" .. i
         print(varName .. ": " .. color)
+    
+        -- Set the variable and write it to the skin file
         SKIN:Bang("!SetVariable", varName, color)
         SKIN:Bang("!WriteKeyValue", "Variables", varName, color)
+    
+        -- Construct the SKIN:Bang command as a string and print it
+        --local command = string.format('!SetOption %s This "FillColor %s"', meterName, color)
+        --print(command)
+        
+    
+        -- Execute the actual SKIN:Bang command
+        SKIN:Bang("!SetOption", meterName, "This", "FillColor " .. color)
+        SKIN:Bang("!UpdateMeter", meterName)
+        SKIN:Bang("!Redraw")
     end
+    
+    
 
     -- Update all meters and redraw after setting variables
     SKIN:Bang('!UpdateMeter', '*')
