@@ -1,6 +1,7 @@
 function convertColor(hex)
     -- Remove the "#" from the hex string
     hex = hex:gsub("#", "")
+    local saveLocation = SKIN:GetVariable('@')..'vars.nek'
 
     local r = tonumber(hex:sub(1, 2), 16) / 255
     local g = tonumber(hex:sub(3, 4), 16) / 255
@@ -43,11 +44,11 @@ function convertColor(hex)
     SKIN:Bang("!SetVariable", "HSL", string.format("hsl(%d, %d%%, %d%%)", hslH, hslS, hslL))
     SKIN:Bang("!SetVariable", "HSV", string.format("hsv(%d, %d%%, %d%%)", hsvH, hsvS, hsvV))
     SKIN:Bang("!SetVariable", "HSI", string.format("hsi(%d, %d%%, %d%%)", hsiH, hsiS, hsiI))
-    SKIN:Bang("!WriteKeyValue","Variables", "Hex", hex)
-    SKIN:Bang("!WriteKeyValue","Variables", "RGB", string.format("rgb(%d, %d, %d)", math.floor(r * 255), math.floor(g * 255), math.floor(b * 255)))
-    SKIN:Bang("!WriteKeyValue","Variables", "HSL", string.format("hsl(%d, %d%%, %d%%)", hslH, hslS, hslL))
-    SKIN:Bang("!WriteKeyValue","Variables", "HSV", string.format("hsv(%d, %d%%, %d%%)", hsvH, hsvS, hsvV))
-    SKIN:Bang("!WriteKeyValue","Variables", "HSI", string.format("hsi(%d, %d%%, %d%%)", hsiH, hsiS, hsiI))
+    SKIN:Bang("!WriteKeyValue","Variables", "Hex", hex,saveLocation)
+    SKIN:Bang("!WriteKeyValue","Variables", "RGB", string.format("rgb(%d, %d, %d)", math.floor(r * 255), math.floor(g * 255), math.floor(b * 255)),saveLocation)
+    SKIN:Bang("!WriteKeyValue","Variables", "HSL", string.format("hsl(%d, %d%%, %d%%)", hslH, hslS, hslL),saveLocation)
+    SKIN:Bang("!WriteKeyValue","Variables", "HSV", string.format("hsv(%d, %d%%, %d%%)", hsvH, hsvS, hsvV),saveLocation)
+    SKIN:Bang("!WriteKeyValue","Variables", "HSI", string.format("hsi(%d, %d%%, %d%%)", hsiH, hsiS, hsiI),saveLocation)
 	SKIN:Bang('!UpdateMeter', '*')
 	SKIN:Bang('!Redraw')
 

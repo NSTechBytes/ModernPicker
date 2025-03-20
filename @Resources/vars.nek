@@ -1,0 +1,47 @@
+[Variables]
+Background_W=460
+Background_H=400
+Font_Color=255,255,255
+PrimaryColor=10,10,10
+SecondaryColor=200,200,200
+Round=8
+Scale=1
+Opacity=150
+
+HSI=hsi(45, 82%, 61%)
+RGB=rgb(250, 193, 28)
+HSV=hsv(44, 88%, 98%)
+HEX=FAC11C
+HSL=hsl(44, 95%, 54%)
+
+Palettes_Color1=AA7100
+Palettes_Color2=D29900
+Palettes_Color3=FAC11C
+Palettes_Color4=FFE944
+Palettes_Color5=FFFF6C
+
+Active_Palette=1
+
+History_Color1=FAC11C 
+History_Color2=40D2B0
+History_Color3=F38200
+History_Color4=2C2A2D
+History_Color5=2FC3DB
+History_Color6=48D69C
+
+;============================================================================================================================;
+;                                          Position                                                                          ;
+;============================================================================================================================;
+Position=BC
+MonitorIndex=1
+XPad=0
+YPad=0
+PreserveTaskbarSpace=1
+;============================================================================================================================;
+;                                         Animation                                                                          ;
+;============================================================================================================================;
+Animated=1
+EaseType=OutSine
+AniDir=Bottom
+AniSteps=10
+AnimationDisplacement=30

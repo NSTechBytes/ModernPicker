@@ -1,6 +1,7 @@
 function updateHistory()
     -- Get the picked color from the measure
     local newColor = SKIN:GetMeasure("YourPicker"):GetStringValue()
+    local saveLocation = SKIN:GetVariable('@')..'vars.nek'
 
     -- Get previous colors from variables
     local history = {}
@@ -17,7 +18,7 @@ function updateHistory()
     -- Update variables and write to the skin
     for i = 1, 6 do
         SKIN:Bang('!SetVariable', "History_Color" .. i, history[i])
-        SKIN:Bang('!WriteKeyValue', 'Variables', "History_Color" .. i, history[i])
+        SKIN:Bang('!WriteKeyValue', 'Variables', "History_Color" .. i, history[i],saveLocation)
     end
 
     -- Apply colors to ellipse meters

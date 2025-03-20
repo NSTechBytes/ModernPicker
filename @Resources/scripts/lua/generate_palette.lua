@@ -1,6 +1,7 @@
 function generatePalette(hex)
     -- Remove # from hex if present
     hex = hex:gsub("#", "")
+    local saveLocation = SKIN:GetVariable('@')..'vars.nek'
 
     -- Utility function to clamp values between 0 and 255
     local function clamp(value)
@@ -73,7 +74,7 @@ function generatePalette(hex)
     
         -- Set the variable and write it to the skin file
         SKIN:Bang("!SetVariable", varName, color)
-        SKIN:Bang("!WriteKeyValue", "Variables", varName, color)
+        SKIN:Bang("!WriteKeyValue", "Variables", varName, color,saveLocation)
     
         -- Construct the SKIN:Bang command as a string and print it
         --local command = string.format('!SetOption %s This "FillColor %s"', meterName, color)
