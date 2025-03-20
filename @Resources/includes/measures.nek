@@ -4,13 +4,14 @@
 
 [mToggle]
 Measure=Calc
-Formula=1 - mToggle 
+Formula=1 - mToggle
 IfCondition=mToggle = 0
 IfTrueAction=[!UpdateMeasure ACTIONLOAD][!CommandMEasure Focus "#CURRENTCONFIG#"]
 IfCondition2=mToggle = 1
 IfTrueAction2=[!UpdateMeasure ACTIONUNLOAD]
 IfConditionMode=1
 DynamicVariables=1
+
 [mToggleSet]
 Measure=Calc
 Formula=mToggle
@@ -43,7 +44,7 @@ OnUpdateAction=[!CommandMeasure ActionTimer "Stop 1"][!CommandMeasure ActionTime
 Disabled=1
 Group=NUOL
 ;=======================================================================================================================;
-;                                                 Measures                                                              ;
+;                                                Plugin Measures                                                        ;
 ;=======================================================================================================================;
 
 [MeasureTray]
@@ -52,29 +53,38 @@ Plugin=SkinTray
 Icon=#@#images\icon.ico
 ToolTipText=ModernPicker
 LeftMouseUpAction=[!CommandMeasure YourPicker  "-mp"][!UpdateMeter *][!Redraw]
+Disabled=1
 ;RightMouseUpAction=[!SkinMenu]
 
-[FrostedGlass]
+[FrostBehind]
 Measure=Plugin
 Plugin=FrostBehind
 Type=Acrylic
 Border=All
 Corner=Round
-;[Update_History]
-;Measure=String
-;OnUpdateAction=[!SetVariable "History_Color1" "[YourPicker]"][!SetVariable "History_Color2" "#History_Color1#"][!SetVariable "History_Color3" "#History_Color2#"][!SetVariable "History_Color4" "#History_Color3#"][!SetVariable "History_Color5" "#History_Color4#"][!SetVariable "History_Color6" "#History_Color5#"][!WriteKeyValue Variables "History_Color1" "[YourPicker]"][!WriteKeyValue Variables "History_Color2" "#History_Color1#"][!WriteKeyValue Variables "History_Color3" "#History_Color2#"][!WriteKeyValue Variables "History_Color4" "#History_Color3#"][!WriteKeyValue Variables "History_Color5" "#History_Color4#"][!WriteKeyValue Variables "History_Color6" "#History_Color5#"][!SetOption History_Ellipse_Color_1 This "FillColor [YourPicker]"][!SetOption History_Ellipse_Color_2 This "FillColor #History_Color1#"][!SetOption History_Ellipse_Color_3 This "FillColor #History_Color2#"][!SetOption History_Ellipse_Color_4 This "FillColor #History_Color3#"][!SetOption History_Ellipse_Color_5 This "FillColor #History_Color4#"][!SetOption History_Ellipse_Color_6 This "FillColor #History_Color5#"][!UpdateMeter *][!Redraw]
-;UpdateDivider=-1
-;DynamicVariables=1
+
 [YourPicker]
 Measure=Plugin
 Plugin=YourPicker
 ReturnValue=Hex
-OnFinishAction=[!WriteKeyValue Variables Active_Palette  "1"][!SetVariable Active_Palette  "1"][!CommandMeasure convert_Color "convertColor('[YourPicker]')"][!CommandMeasure generate_Palette "generatePalette('[YourPicker]')"][!UpdateMeter *][!Redraw][!CommandMeasure Update_History "updateHistory()"][!UpdateMeasure mToggle]
+OnFinishAction=[!WriteKeyValue Variables Active_Palette  "1" "#@#vars.nek"][!SetVariable Active_Palette  "1"][!CommandMeasure convert_Color "convertColor('[YourPicker]')"][!CommandMeasure generate_Palette "generatePalette('[YourPicker]')"][!UpdateMeter *][!Redraw][!CommandMeasure Update_History "updateHistory()"][!UpdateMeasure mToggle]
 DynamicVariables=1
 
 [Focus]
 Measure=Plugin
 Plugin=Focus
+
+[HotKey]
+Measure=Plugin
+Plugin=HotKey
+HotKey=#Key#
+;KeyDownAction=[!CommandMeasure YourPicker  "-mp"][!UpdateMeter *][!Redraw]
+KeyDownAction=[!CommandMeasure Func  "hotkey()"]
+
+
+;=======================================================================================================================;
+;                                                Lua Measures                                                           ;
+;=======================================================================================================================;
 
 [Func]
 Measure=Script

@@ -10,6 +10,18 @@ function Initialize()
     SKIN:Bang('!Redraw')  
 end
 
+function hotkey()
+    local isShowSkin = SKIN:GetMeasure('mToggle'):GetValue()
+    print(isShowSkin)
+
+    if isShow == 1 then 
+        SKIN:Bang('!UpdateMeasure', 'mToggleSet')
+    end
+
+    SKIN:Bang('!CommandMeasure', 'YourPicker', '-mp')
+    SKIN:Bang('!UpdateMeter', '*')
+    SKIN:Bang('!Redraw')  
+end
 
 
 function trim(Text, Match, Replace)
