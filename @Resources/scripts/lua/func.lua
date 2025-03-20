@@ -14,7 +14,7 @@ function hotkey()
     local isShowSkin = SKIN:GetMeasure('mToggle'):GetValue()
     print(isShowSkin)
 
-    if isShow == 1 then 
+    if isShowSkin == 0 then 
         SKIN:Bang('!UpdateMeasure', 'mToggleSet')
     end
 

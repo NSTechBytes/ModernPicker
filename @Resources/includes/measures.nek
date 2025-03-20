@@ -89,6 +89,7 @@ KeyDownAction=[!CommandMeasure Func  "hotkey()"]
 [Func]
 Measure=Script
 ScriptFile=#@#scripts\lua\func.lua
+DynamicVariables=1
 
 [generate_Palette]
 Measure=Script
