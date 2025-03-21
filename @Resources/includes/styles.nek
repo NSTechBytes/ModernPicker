@@ -11,6 +11,7 @@ LeftMouseUpAction=[!WriteKeyValue Variables Active_Palette  "[&Func:trim('#CURRE
 MouseOverAction=[!SetOption #CURRENTSECTION# This "FillColor  [#History_Color[&Func:trim('#CURRENTSECTION#', 'History_Ellipse_Color_', '')]]96"][!UpdateMeter #CURRENTSECTION#][!Redraw]
 MouseLeaveAction=[!SetOption #CURRENTSECTION# This "FillColor  [#History_Color[&Func:trim('#CURRENTSECTION#', 'History_Ellipse_Color_', '')]]"][!UpdateMeter #CURRENTSECTION#][!Redraw]
 DynamicVariables=1
+Container=ContentContainer
 
 [Text_Style]
 FontWeight=100
@@ -20,6 +21,7 @@ FontSize=(10*#Scale#)
 StringAlign=LeftCenter
 Antialias=1
 DynamicVariables=1
+Container=ContentContainer
 
 [Icon_Style]
 FontFace=Modern-Picker
@@ -29,6 +31,7 @@ FontSize=(15*#Scale#)
 StringAlign=RightCenter
 Antialias=1
 DynamicVariables=1
+Container=ContentContainer
 
 [Palettes_Style]
 Y=(50*#Scale#)r
@@ -39,6 +42,7 @@ MouseOverAction=[!SetOption #CURRENTSECTION# This "FillColor [##CURRENTSECTION#]
 MouseLeaveAction=[!SetOption #CURRENTSECTION# This "FillColor [##CURRENTSECTION#]"][!UpdateMeter #CURRENTSECTION#][!Redraw]
 LeftMouseUpAction=[!WriteKeyValue Variables Active_Palette "1" "#@#vars.nek"][!SetVariable Active_Palette  "1"][!CommandMeasure convert_Color "convertColor('[##CURRENTSECTION#]')"][!CommandMeasure generate_Palette "generatePalette('[##CURRENTSECTION#]')"][!UpdateMeter *][!Redraw]
 DynamicVariables=1
+Container=ContentContainer
 
 [Colors_Background]
 X=(70*#Scale#)
@@ -48,6 +52,7 @@ This=FillColor #SecondaryColor#,20
 DynamicVariables=1
 MouseOverAction=[!SetOption #CURRENTSECTION# This "FillColor #SecondaryColor#,15"][!UpdateMeter #CURRENTSECTION#][!Redraw]
 MouseLeaveAction=[!SetOption #CURRENTSECTION# This "FillColor #SecondaryColor#,20"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+Container=ContentContainer
 
 [Copy_Icon_Style]
 X=((#Background_W#*#Scale#)-18*#Scale#)
@@ -56,13 +61,16 @@ Text=[\xE900]
 MouseOverAction=[!SetOption "Hover_Background" X  "([#CURRENTSECTION#:X]-8*#Scale#)"][!SetOption "Hover_Background" Y  "([#CURRENTSECTION#:Y]-7*#Scale#)"][!ShowMeter Hover_Background][!UpdateMeter Hover_Background][!Redraw]
 MouseLeaveAction=[!HideMeter Hover_Background][!UpdateMeter Hover_Background][!Redraw]
 LeftMouseUpAction=[!SetClip "[#[&Func:trim('#CURRENTSECTION#', '_Copy_Icon', '')]]"][!SetOption "#CURRENTSECTION#" Text "[\xE904]"][!UpdateMeter #CURRENTSECTION#][!Redraw][!Delay 1500][!SetOption "#CURRENTSECTION#" Text "[\xE900]"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+Container=ContentContainer
 
 [Color_Text_Style]
 X=(155*#Scale#)
 Y=r
 Text=[#[&Func:trim('#CURRENTSECTION#', '_Color_Text', '')]]
+Container=ContentContainer
 
 [Color_Text]
 X=(10*#Scale#)r
 Y=((45*#Scale#)/2)r
 Text=[&Func:trim('#CURRENTSECTION#', '_Text', '')]
+Container=ContentContainer

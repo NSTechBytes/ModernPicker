@@ -7,10 +7,11 @@ Y=(50*#Scale#)
 LeftMouseUpAction=[!CommandMeasure Func  "hotkey()"]
 MouseOverAction=[!SetOption #CURRENTSECTION# This "FillColor #SecondaryColor#,20"][!UpdateMeter #CURRENTSECTION#][!Redraw]
 MouseLeaveAction=[!SetOption #CURRENTSECTION# This "FillColor #SecondaryColor#,40"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+Container=ContentContainer
 
 [Pick_Icon]
 Meter=String
-X=(10*#Scale#)r
+X=(15*#Scale#)r
 Y=((35*#Scale#)/2)r
 Text=[\xE902]
 StringAlign=LeftCenter

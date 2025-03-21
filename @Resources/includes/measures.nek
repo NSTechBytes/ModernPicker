@@ -80,8 +80,6 @@ Plugin=HotKey
 HotKey=#Key#
 ;KeyDownAction=[!CommandMeasure YourPicker  "-mp"][!UpdateMeter *][!Redraw]
 KeyDownAction=[!CommandMeasure Func  "hotkey()"]
-
-
 ;=======================================================================================================================;
 ;                                                Lua Measures                                                           ;
 ;=======================================================================================================================;

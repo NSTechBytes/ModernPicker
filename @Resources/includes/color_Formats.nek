@@ -2,6 +2,8 @@
 Meter=String
 Y=(90*#Scale#)
 DynamicVariables=1
+Container=ContentContainer
+
 @include_RGB_Page=#@#includes\Formats\RGB#RGB_Hidden#.nek
 @include_HEX_Page=#@#includes\Formats\HEX#HEX_Hidden#.nek
 @include_HSV_Page=#@#includes\Formats\HSV#HSV_Hidden#.nek

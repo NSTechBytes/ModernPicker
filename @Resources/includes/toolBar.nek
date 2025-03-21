@@ -5,6 +5,7 @@ W=(25*#Scale#)
 H=(25*#Scale#)
 X=(18*#Scale#)
 Y=(10*#Scale#)
+Container=ContentContainer
 
 [MP_Text]
 Meter=String
