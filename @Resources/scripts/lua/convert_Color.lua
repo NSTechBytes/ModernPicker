@@ -1,7 +1,8 @@
 function convertColor(hex)
     -- Remove the "#" from the hex string
     hex = hex:gsub("#", "")
-    local saveLocation = SKIN:GetVariable('@')..'vars.nek'
+    local saveLocation = SKIN:GetVariable('@') .. 'vars.nek'
+    local copyClipboard = SKIN:GetVariable('Format_Copy')
 
     local r = tonumber(hex:sub(1, 2), 16) / 255
     local g = tonumber(hex:sub(3, 4), 16) / 255
@@ -35,29 +36,50 @@ function convertColor(hex)
     local num = 0.5 * ((r - g) + (r - b))
     local den = math.sqrt((r - g) * (r - g) + (r - b) * (g - b))
     local theta = den == 0 and 0 or math.acos(num / den)
-    if b > g then h = 360 - math.deg(theta) else h = math.deg(theta) end
+    if b > g then
+        h = 360 - math.deg(theta)
+    else
+        h = math.deg(theta)
+    end
     local hsiH, hsiS, hsiI = math.floor(h), math.floor(saturation * 100), math.floor(i * 100)
 
     -- Set Rainmeter variables
-	SKIN:Bang("!SetVariable", "Hex", hex)
-    SKIN:Bang("!SetVariable", "RGB", string.format("rgb(%d, %d, %d)", math.floor(r * 255), math.floor(g * 255), math.floor(b * 255)))
+    SKIN:Bang("!SetVariable", "Hex", hex)
+    SKIN:Bang("!SetVariable", "RGB",
+        string.format("rgb(%d, %d, %d)", math.floor(r * 255), math.floor(g * 255), math.floor(b * 255)))
     SKIN:Bang("!SetVariable", "HSL", string.format("hsl(%d, %d%%, %d%%)", hslH, hslS, hslL))
     SKIN:Bang("!SetVariable", "HSV", string.format("hsv(%d, %d%%, %d%%)", hsvH, hsvS, hsvV))
     SKIN:Bang("!SetVariable", "HSI", string.format("hsi(%d, %d%%, %d%%)", hsiH, hsiS, hsiI))
-    SKIN:Bang("!WriteKeyValue","Variables", "Hex", hex,saveLocation)
-    SKIN:Bang("!WriteKeyValue","Variables", "RGB", string.format("rgb(%d, %d, %d)", math.floor(r * 255), math.floor(g * 255), math.floor(b * 255)),saveLocation)
-    SKIN:Bang("!WriteKeyValue","Variables", "HSL", string.format("hsl(%d, %d%%, %d%%)", hslH, hslS, hslL),saveLocation)
-    SKIN:Bang("!WriteKeyValue","Variables", "HSV", string.format("hsv(%d, %d%%, %d%%)", hsvH, hsvS, hsvV),saveLocation)
-    SKIN:Bang("!WriteKeyValue","Variables", "HSI", string.format("hsi(%d, %d%%, %d%%)", hsiH, hsiS, hsiI),saveLocation)
-	SKIN:Bang('!UpdateMeter', '*')
-	SKIN:Bang('!Redraw')
+    SKIN:Bang("!WriteKeyValue", "Variables", "Hex", hex, saveLocation)
+    SKIN:Bang("!WriteKeyValue", "Variables", "RGB",
+        string.format("rgb(%d, %d, %d)", math.floor(r * 255), math.floor(g * 255), math.floor(b * 255)), saveLocation)
+    SKIN:Bang("!WriteKeyValue", "Variables", "HSL", string.format("hsl(%d, %d%%, %d%%)", hslH, hslS, hslL), saveLocation)
+    SKIN:Bang("!WriteKeyValue", "Variables", "HSV", string.format("hsv(%d, %d%%, %d%%)", hsvH, hsvS, hsvV), saveLocation)
+    SKIN:Bang("!WriteKeyValue", "Variables", "HSI", string.format("hsi(%d, %d%%, %d%%)", hsiH, hsiS, hsiI), saveLocation)
+    SKIN:Bang('!UpdateMeter', '*')
+    SKIN:Bang('!Redraw')
+
+    if copyClipboard == 'HSV' then
+        SKIN:Bang('!SetClip', string.format("hsv(%d, %d%%, %d%%)", hsvH, hsvS, hsvV))
+    elseif copyClipboard == 'RGB' then
+        SKIN:Bang('!SetClip',
+            string.format("rgb(%d, %d, %d)", math.floor(r * 255), math.floor(g * 255), math.floor(b * 255)))
+    elseif copyClipboard == 'HSI' then
+        SKIN:Bang('!SetClip', string.format("hsi(%d, %d%%, %d%%)", hsiH, hsiS, hsiI))
+    elseif copyClipboard == 'HSL' then
+        SKIN:Bang('!SetClip', string.format("hsl(%d, %d%%, %d%%)", hslH, hslS, hslL))
+    elseif copyClipboard == 'HEX' then
+        SKIN:Bang('!SetClip', hex)
+    else
+        print("Unknown")
+    end
 
     -- Print the converted values
-    --print("Hex:" .. hex)
-    --print("RGB: rgb(" .. math.floor(r * 255) .. ", " .. math.floor(g * 255) .. ", " .. math.floor(b * 255) .. ")")
-    --print("HSL: hsl(" .. hslH .. ", " .. hslS .. "%, " .. hslL .. "%)")
-    --print("HSV: hsv(" .. hsvH .. ", " .. hsvS .. "%, " .. hsvV .. "%)")
-    --print("HSI: hsi(" .. hsiH .. ", " .. hsiS .. "%, " .. hsiI .. "%)")
+    -- print("Hex:" .. hex)
+    -- print("RGB: rgb(" .. math.floor(r * 255) .. ", " .. math.floor(g * 255) .. ", " .. math.floor(b * 255) .. ")")
+    -- print("HSL: hsl(" .. hslH .. ", " .. hslS .. "%, " .. hslL .. "%)")
+    -- print("HSV: hsv(" .. hsvH .. ", " .. hsvS .. "%, " .. hsvV .. "%)")
+    -- print("HSI: hsi(" .. hsiH .. ", " .. hsiS .. "%, " .. hsiI .. "%)")
 
     return {
         Hex = "#" .. hex,

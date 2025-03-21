@@ -1,6 +1,6 @@
 [History_Ellipse_Color_1]
 Meter=Shape
-X=(128*#Scale#)
+X=(108*#Scale#)
 Y=(55*#Scale#)
 MeterStyle=History_Ellipse_Color_Style
 
@@ -21,5 +21,9 @@ Meter=Shape
 MeterStyle=History_Ellipse_Color_Style
 
 [History_Ellipse_Color_6]
+Meter=Shape
+MeterStyle=History_Ellipse_Color_Style
+
+[History_Ellipse_Color_7]
 Meter=Shape
 MeterStyle=History_Ellipse_Color_Style

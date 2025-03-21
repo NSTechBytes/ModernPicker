@@ -1,6 +1,6 @@
 [Pick_Background]
 Meter=Shape
-Shape=Rectangle 0,0,(90*#Scale#),(35*#Scale#),(4*#Scale#)|StrokeWidth 0 |Extend This
+Shape=Rectangle 0,0,(70*#Scale#),(35*#Scale#),(4*#Scale#)|StrokeWidth 0 |Extend This
 This=FillColor #SecondaryColor#,40
 X=(18*#Scale#)
 Y=(50*#Scale#)
@@ -11,7 +11,7 @@ Container=ContentContainer
 
 [Pick_Icon]
 Meter=String
-X=(15*#Scale#)r
+X=(10*#Scale#)r
 Y=((35*#Scale#)/2)r
 Text=[\xE902]
 StringAlign=LeftCenter

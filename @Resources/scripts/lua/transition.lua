@@ -29,7 +29,8 @@ function Initialize()
             AnchorX = 0
             AnchorY = 0
 
-            if posX == 'L' then MoveX = (sax + xpad + taskbar * xdif)
+            if posX == 'L' then
+                MoveX = (sax + xpad + taskbar * xdif)
             elseif posX == 'C' then
                 MoveX = (sax + saw / 2)
                 AnchorX = "50%"
@@ -38,7 +39,8 @@ function Initialize()
                 AnchorX = "100%"
             end
 
-            if posY == 'T' then MoveY = (say + ypad + taskbar * ydif)
+            if posY == 'T' then
+                MoveY = (say + ypad + taskbar * ydif)
             elseif posY == 'C' then
                 MoveY = (say + sah / 2)
                 AnchorY = "50%"
@@ -51,7 +53,7 @@ function Initialize()
         end
     end
     positionMenu()
---------------------- handle animation toggle ------------------------ --
+    --------------------- handle animation toggle ------------------------ --
 
     if tonumber(SKIN:GetVariable('Animated')) == 1 then
         AniSteps = tonumber(SKIN:GetVariable('AniSteps'))
@@ -62,10 +64,11 @@ function Initialize()
         subject = {
             TweenNode = 0
         }
-        t = tween.new(AniSteps, subject, { TweenNode = 100 }, SKIN:GetVariable('Easetype'))
+        t = tween.new(AniSteps, subject, {
+            TweenNode = 100
+        }, SKIN:GetVariable('Easetype'))
     end
 end
-
 
 function tweenAnimation(dir)
     if dir == 'in' then
@@ -74,16 +77,28 @@ function tweenAnimation(dir)
         t:update(-1)
     end
     resultantTN = subject.TweenNode
-    if resultantTN > 100 then resultantTN = 100 elseif resultantTN < 0 then resultantTN = 0 end
+    if resultantTN > 100 then
+        resultantTN = 100
+    elseif resultantTN < 0 then
+        resultantTN = 0
+    end
     local bang = '[!SetTransparency ' .. (resultantTN / 100 * 255) .. ']'
     if AniDir == 'Left' then
-        bang = bang .. '[!SetWindowPosition ' .. MoveX + (resultantTN / 100 - 1) * AnimationDisplacement .. ' ' .. MoveY .. ' ' .. AnchorX .. ' ' .. AnchorY .. ']'
+        bang =
+            bang .. '[!SetWindowPosition ' .. MoveX + (resultantTN / 100 - 1) * AnimationDisplacement .. ' ' .. MoveY ..
+                ' ' .. AnchorX .. ' ' .. AnchorY .. ']'
     elseif AniDir == 'Right' then
-        bang = bang .. '[!SetWindowPosition ' .. MoveX + (1 - resultantTN / 100) * AnimationDisplacement .. ' ' .. MoveY .. ' ' .. AnchorX .. ' ' .. AnchorY .. ']'
+        bang =
+            bang .. '[!SetWindowPosition ' .. MoveX + (1 - resultantTN / 100) * AnimationDisplacement .. ' ' .. MoveY ..
+                ' ' .. AnchorX .. ' ' .. AnchorY .. ']'
     elseif AniDir == 'Top' then
-        bang = bang .. '[!SetWindowPosition ' .. MoveX .. ' ' .. MoveY + (resultantTN / 100 - 1) * AnimationDisplacement .. ' ' .. AnchorX .. ' ' .. AnchorY .. ']'
+        bang =
+            bang .. '[!SetWindowPosition ' .. MoveX .. ' ' .. MoveY + (resultantTN / 100 - 1) * AnimationDisplacement ..
+                ' ' .. AnchorX .. ' ' .. AnchorY .. ']'
     elseif AniDir == 'Bottom' then
-        bang = bang .. '[!SetWindowPosition ' .. MoveX .. ' ' .. MoveY + (1 - resultantTN / 100) * AnimationDisplacement .. ' ' .. AnchorX .. ' ' .. AnchorY .. ']'
+        bang =
+            bang .. '[!SetWindowPosition ' .. MoveX .. ' ' .. MoveY + (1 - resultantTN / 100) * AnimationDisplacement ..
+                ' ' .. AnchorX .. ' ' .. AnchorY .. ']'
     end
     bang = bang .. '[!UpdateMeasure ActionTimer]'
     SKIN:Bang(bang)

@@ -1,20 +1,9 @@
 ;=======================================================================================================================;
-;                                                 MeterStyles                                                           ;
+;                                                 Global                                                                ;
 ;=======================================================================================================================;
 
-[History_Ellipse_Color_Style]
-Shape=Rectangle 0,0,(25*#Scale#),(25*#Scale#),(25*#Scale#)|StrokeWidth 1 | Extend This | Stroke Color #SecondaryColor#,50
-This=FillColor  [#History_Color[&Func:trim('#CURRENTSECTION#', 'History_Ellipse_Color_', '')]]
-X=(20*#Scale#)R
-Y=r
-LeftMouseUpAction=[!WriteKeyValue Variables Active_Palette  "[&Func:trim('#CURRENTSECTION#', 'History_Ellipse_Color_', '')]" "#@#vars.nek"][!SetVariable Active_Palette  "[&Func:trim('#CURRENTSECTION#', 'History_Ellipse_Color_', '')]"][!CommandMeasure convert_Color "convertColor('[#History_Color[&Func:trim('#CURRENTSECTION#', 'History_Ellipse_Color_', '')]]')"][!CommandMeasure generate_Palette "generatePalette('[#History_Color[&Func:trim('#CURRENTSECTION#', 'History_Ellipse_Color_', '')]]')"][!UpdateMeter *][!Redraw]
-MouseOverAction=[!SetOption #CURRENTSECTION# This "FillColor  [#History_Color[&Func:trim('#CURRENTSECTION#', 'History_Ellipse_Color_', '')]]96"][!UpdateMeter #CURRENTSECTION#][!Redraw]
-MouseLeaveAction=[!SetOption #CURRENTSECTION# This "FillColor  [#History_Color[&Func:trim('#CURRENTSECTION#', 'History_Ellipse_Color_', '')]]"][!UpdateMeter #CURRENTSECTION#][!Redraw]
-DynamicVariables=1
-Container=ContentContainer
-
 [Text_Style]
-FontWeight=100
+FontWeight=400
 FontFace=Lato
 FontColor=#Font_Color#
 FontSize=(10*#Scale#)
@@ -32,6 +21,23 @@ StringAlign=RightCenter
 Antialias=1
 DynamicVariables=1
 Container=ContentContainer
+;=======================================================================================================================;
+;                                                 Ellipse                                                               ;
+;=======================================================================================================================;
+
+[History_Ellipse_Color_Style]
+Shape=Rectangle 0,0,(25*#Scale#),(25*#Scale#),(25*#Scale#)|StrokeWidth 1 | Extend This | Stroke Color #SecondaryColor#,50
+This=FillColor  [#History_Color[&Func:trim('#CURRENTSECTION#', 'History_Ellipse_Color_', '')]]
+X=(15*#Scale#)R
+Y=r
+LeftMouseUpAction=[!WriteKeyValue Variables Active_Palette  "[&Func:trim('#CURRENTSECTION#', 'History_Ellipse_Color_', '')]" "#@#vars.nek"][!SetVariable Active_Palette  "[&Func:trim('#CURRENTSECTION#', 'History_Ellipse_Color_', '')]"][!CommandMeasure convert_Color "convertColor('[#History_Color[&Func:trim('#CURRENTSECTION#', 'History_Ellipse_Color_', '')]]')"][!CommandMeasure generate_Palette "generatePalette('[#History_Color[&Func:trim('#CURRENTSECTION#', 'History_Ellipse_Color_', '')]]')"][!UpdateMeter *][!Redraw]
+MouseOverAction=[!SetOption #CURRENTSECTION# This "FillColor  [#History_Color[&Func:trim('#CURRENTSECTION#', 'History_Ellipse_Color_', '')]]96"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+MouseLeaveAction=[!SetOption #CURRENTSECTION# This "FillColor  [#History_Color[&Func:trim('#CURRENTSECTION#', 'History_Ellipse_Color_', '')]]"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+DynamicVariables=1
+Container=ContentContainer
+;=======================================================================================================================;
+;                                                 Palettes                                                              ;
+;=======================================================================================================================;
 
 [Palettes_Style]
 Y=(50*#Scale#)r
@@ -43,6 +49,9 @@ MouseLeaveAction=[!SetOption #CURRENTSECTION# This "FillColor [##CURRENTSECTION#
 LeftMouseUpAction=[!WriteKeyValue Variables Active_Palette "1" "#@#vars.nek"][!SetVariable Active_Palette  "1"][!CommandMeasure convert_Color "convertColor('[##CURRENTSECTION#]')"][!CommandMeasure generate_Palette "generatePalette('[##CURRENTSECTION#]')"][!UpdateMeter *][!Redraw]
 DynamicVariables=1
 Container=ContentContainer
+;=======================================================================================================================;
+;                                                 Color Formats                                                         ;
+;=======================================================================================================================;
 
 [Colors_Background]
 X=(70*#Scale#)

@@ -1,7 +1,7 @@
 function generatePalette(hex)
     -- Remove # from hex if present
     hex = hex:gsub("#", "")
-    local saveLocation = SKIN:GetVariable('@')..'vars.nek'
+    local saveLocation = SKIN:GetVariable('@') .. 'vars.nek'
 
     -- Utility function to clamp values between 0 and 255
     local function clamp(value)
@@ -57,37 +57,34 @@ function generatePalette(hex)
     -- Generate shades based on the dominant color
     local palette
     if domColor == "gray" then
-        palette = generateShades(r, g, b, 20)  -- Gray shades
+        palette = generateShades(r, g, b, 20) -- Gray shades
     elseif domColor == "red" then
-        palette = generateShades(r, g, b, 40)  -- Red shades
+        palette = generateShades(r, g, b, 40) -- Red shades
     elseif domColor == "green" then
-        palette = generateShades(r, g, b, 40)  -- Green shades
+        palette = generateShades(r, g, b, 40) -- Green shades
     else
-        palette = generateShades(r, g, b, 40)  -- Blue shades
+        palette = generateShades(r, g, b, 40) -- Blue shades
     end
 
     -- Print the palette and set variables in Rainmeter
     for i, color in ipairs(palette) do
         local varName = "Palettes_Color" .. i
         local meterName = "Palettes_Color" .. i
-        --print(varName .. ": " .. color)
-    
+        -- print(varName .. ": " .. color)
+
         -- Set the variable and write it to the skin file
         SKIN:Bang("!SetVariable", varName, color)
-        SKIN:Bang("!WriteKeyValue", "Variables", varName, color,saveLocation)
-    
+        SKIN:Bang("!WriteKeyValue", "Variables", varName, color, saveLocation)
+
         -- Construct the SKIN:Bang command as a string and print it
-        --local command = string.format('!SetOption %s This "FillColor %s"', meterName, color)
-        --print(command)
-        
-    
+        -- local command = string.format('!SetOption %s This "FillColor %s"', meterName, color)
+        -- print(command)
+
         -- Execute the actual SKIN:Bang command
         SKIN:Bang("!SetOption", meterName, "This", "FillColor " .. color)
         SKIN:Bang("!UpdateMeter", meterName)
         SKIN:Bang("!Redraw")
     end
-    
-    
 
     -- Update all meters and redraw after setting variables
     SKIN:Bang('!UpdateMeter', '*')
