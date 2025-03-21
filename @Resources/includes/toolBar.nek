@@ -1,0 +1,28 @@
+[Meter_Image]
+Meter=Image
+ImageName=#@#images\Modern Picker.png
+W=(25*#Scale#)
+H=(25*#Scale#)
+X=(18*#Scale#)
+Y=(10*#Scale#)
+
+[MP_Text]
+Meter=String
+X=(5*#Scale#)R
+Y=(10*#Scale#)r
+Text=Modern Picker
+MeterStyle=Text_Style
+
+[Close_Icon]
+Meter=String
+X=((#Background_W#*#Scale#)-18*#Scale#)
+Y=(18*#Scale#)
+Text=[\xE901]
+W=(35*#Scale#)
+H=(35*#Scale#)
+StringAlign=CenterCenter
+SolidColor=241,43,43,0
+MouseOverAction=[!SetOption #CURRENTSECTION# SolidColor "241,43,43,255"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+MouseLeaveAction=[!SetOption #CURRENTSECTION# SolidColor "241,43,43,0"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+MeterStyle=Icon_Style
+LeftMouseUpAction=[!UpdateMeasure mToggleSet]

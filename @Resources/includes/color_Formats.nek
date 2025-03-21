@@ -1,85 +1,9 @@
 [DimmyString]
 Meter=String
-Text=[mToggleSet]
 Y=(90*#Scale#)
 DynamicVariables=1
-
-[RGB_BackGround]
-Meter=Shape
-MeterStyle=Colors_Background
-
-[RGB_Text]
-Meter=String
-MeterStyle=Text_Style | Color_Text
-
-[RGB_Color_Text]
-Meter=String
-MeterStyle=Text_Style | Color_Text_Style
-
-[RGB_Copy_Icon]
-Meter=String
-MeterStyle=Icon_Style | Copy_Icon_Style
-
-[HEX_BackGround]
-Meter=Shape
-MeterStyle=Colors_Background
-
-[HEX_Text]
-Meter=String
-MeterStyle=Text_Style | Color_Text
-
-[HEX_Color_Text]
-Meter=String
-MeterStyle=Text_Style | Color_Text_Style
-
-[HEX_Copy_Icon]
-Meter=String
-MeterStyle=Icon_Style | Copy_Icon_Style
-
-[HSL_BackGround]
-Meter=Shape
-MeterStyle=Colors_Background
-
-[HSL_Text]
-Meter=String
-MeterStyle=Text_Style | Color_Text
-
-[HSL_Color_Text]
-Meter=String
-MeterStyle=Text_Style | Color_Text_Style
-
-[HSL_Copy_Icon]
-Meter=String
-MeterStyle=Icon_Style | Copy_Icon_Style
-
-[HSV_BackGround]
-Meter=Shape
-MeterStyle=Colors_Background
-
-[HSV_Text]
-Meter=String
-MeterStyle=Text_Style | Color_Text
-
-[HSV_Color_Text]
-Meter=String
-MeterStyle=Text_Style | Color_Text_Style
-
-[HSV_Copy_Icon]
-Meter=String
-MeterStyle=Icon_Style | Copy_Icon_Style
-
-[HSI_BackGround]
-Meter=Shape
-MeterStyle=Colors_Background
-
-[HSI_Text]
-Meter=String
-MeterStyle=Text_Style | Color_Text
-
-[HSI_Color_Text]
-Meter=String
-MeterStyle=Text_Style | Color_Text_Style
-
-[HSI_Copy_Icon]
-Meter=String
-MeterStyle=Icon_Style | Copy_Icon_Style
+@include_RGB_Page=#@#includes\Formats\RGB#RGB_Hidden#.nek
+@include_HEX_Page=#@#includes\Formats\HEX#HEX_Hidden#.nek
+@include_HSV_Page=#@#includes\Formats\HSV#HSV_Hidden#.nek
+@include_HSI_Page=#@#includes\Formats\HSI#HSI_Hidden#.nek
+@include_HSL_Page=#@#includes\Formats\HSL#HSL_Hidden#.nek

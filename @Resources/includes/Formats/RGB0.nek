@@ -1,0 +1,15 @@
+[RGB_BackGround]
+Meter=Shape
+MeterStyle=Colors_Background
+
+[RGB_Text]
+Meter=String
+MeterStyle=Text_Style | Color_Text
+
+[RGB_Color_Text]
+Meter=String
+MeterStyle=Text_Style | Color_Text_Style
+
+[RGB_Copy_Icon]
+Meter=String
+MeterStyle=Icon_Style | Copy_Icon_Style

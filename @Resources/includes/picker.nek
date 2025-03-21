@@ -1,0 +1,24 @@
+[Pick_Background]
+Meter=Shape
+Shape=Rectangle 0,0,(90*#Scale#),(35*#Scale#),(4*#Scale#)|StrokeWidth 0 |Extend This
+This=FillColor #SecondaryColor#,40
+X=(18*#Scale#)
+Y=(50*#Scale#)
+LeftMouseUpAction=[!CommandMeasure Func  "hotkey()"]
+MouseOverAction=[!SetOption #CURRENTSECTION# This "FillColor #SecondaryColor#,20"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+MouseLeaveAction=[!SetOption #CURRENTSECTION# This "FillColor #SecondaryColor#,40"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+
+[Pick_Icon]
+Meter=String
+X=(10*#Scale#)r
+Y=((35*#Scale#)/2)r
+Text=[\xE902]
+StringAlign=LeftCenter
+MeterStyle=Icon_Style
+
+[Pick_Text]
+Meter=String
+X=(5*#Scale#)R
+Y=r
+Text=Pick
+MeterStyle=Text_Style

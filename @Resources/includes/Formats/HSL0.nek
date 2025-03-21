@@ -1,0 +1,15 @@
+[HSL_BackGround]
+Meter=Shape
+MeterStyle=Colors_Background
+
+[HSL_Text]
+Meter=String
+MeterStyle=Text_Style | Color_Text
+
+[HSL_Color_Text]
+Meter=String
+MeterStyle=Text_Style | Color_Text_Style
+
+[HSL_Copy_Icon]
+Meter=String
+MeterStyle=Icon_Style | Copy_Icon_Style

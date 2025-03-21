@@ -33,7 +33,7 @@ DynamicVariables=1
 [Palettes_Style]
 Y=(50*#Scale#)r
 X=(20*#Scale#)
-Shape=Rectangle 0,0,(30*#Scale#),(50*#Scale#),0| StrokeWidth 0 | Extend This 
+Shape=Rectangle 0,0,(30*#Scale#),(50*#Scale#),0| StrokeWidth 0 | Extend This
 This=FillColor [##CURRENTSECTION#]
 MouseOverAction=[!SetOption #CURRENTSECTION# This "FillColor [##CURRENTSECTION#]96"][!UpdateMeter #CURRENTSECTION#][!Redraw]
 MouseLeaveAction=[!SetOption #CURRENTSECTION# This "FillColor [##CURRENTSECTION#]"][!UpdateMeter #CURRENTSECTION#][!Redraw]
@@ -43,20 +43,26 @@ DynamicVariables=1
 [Colors_Background]
 X=(70*#Scale#)
 Y=(30*#Scale#)r
-Shape=Rectangle 0,0,((#Background_W#*#Scale#)-80*#Scale#),(45*#Scale#),(4*#Scale#)|StrokeWidth 0 |FillColor #SecondaryColor#,20
+Shape=Rectangle 0,0,((#Background_W#*#Scale#)-80*#Scale#),(45*#Scale#),(4*#Scale#)|StrokeWidth 0 |Extend This
+This=FillColor #SecondaryColor#,20
 DynamicVariables=1
+MouseOverAction=[!SetOption #CURRENTSECTION# This "FillColor #SecondaryColor#,15"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+MouseLeaveAction=[!SetOption #CURRENTSECTION# This "FillColor #SecondaryColor#,20"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+
 [Copy_Icon_Style]
 X=((#Background_W#*#Scale#)-18*#Scale#)
 Y=r
 Text=[\xE900]
-MouseOverAction=[!SetOption "Hover_Background" X  "([#CURRENTSECTION#:X]-5*#Scale#)"][!SetOption "Hover_Background" Y  "([#CURRENTSECTION#:Y]-7*#Scale#)"][!ShowMeter Hover_Background][!UpdateMeter Hover_Background][!Redraw]
+MouseOverAction=[!SetOption "Hover_Background" X  "([#CURRENTSECTION#:X]-8*#Scale#)"][!SetOption "Hover_Background" Y  "([#CURRENTSECTION#:Y]-7*#Scale#)"][!ShowMeter Hover_Background][!UpdateMeter Hover_Background][!Redraw]
 MouseLeaveAction=[!HideMeter Hover_Background][!UpdateMeter Hover_Background][!Redraw]
 LeftMouseUpAction=[!SetClip "[#[&Func:trim('#CURRENTSECTION#', '_Copy_Icon', '')]]"][!SetOption "#CURRENTSECTION#" Text "[\xE904]"][!UpdateMeter #CURRENTSECTION#][!Redraw][!Delay 1500][!SetOption "#CURRENTSECTION#" Text "[\xE900]"][!UpdateMeter #CURRENTSECTION#][!Redraw]
+
 [Color_Text_Style]
 X=(155*#Scale#)
 Y=r
 Text=[#[&Func:trim('#CURRENTSECTION#', '_Color_Text', '')]]
+
 [Color_Text]
-X=(5*#Scale#)r
+X=(10*#Scale#)r
 Y=((45*#Scale#)/2)r
 Text=[&Func:trim('#CURRENTSECTION#', '_Text', '')]
