@@ -1,0 +1,188 @@
+;============================================================================================================================;
+;                                                     Function       s                                                       ;
+;============================================================================================================================;
+
+[MeasureName]
+Measure=Plugin
+Plugin=ConfigActive
+ConfigName=ModernSearchBar\Update
+IfCondition=[&MeasureName:IsActive(ModernSearchBar\Update)] = 1
+IfTrueAction=[!HideMeter Toggle_on_Image1][UpdateMeter *][!Redraw]
+DynamicVariables=1
+
+;============================================================================================================================;
+;                                                     Header                                                                 ;
+;============================================================================================================================;
+
+[General_String]
+Meter=String
+Text=General
+MeterStyle=Header_Style_Text
+
+;============================================================================================================================;
+;                                                     Scale                                                                  ;
+;============================================================================================================================;
+
+[Scale_String]
+Meter=String
+Text=Skin Scale
+Y=150
+MeterStyle=Left_String
+
+[Skin_Input_Shape]
+Meter=Shape
+X=465
+Y=145
+Shape=Rectangle 0,0,100,40,8 |StrokeWidth 0 | Extend This 
+This=Fillcolor 17,24,39,100
+DynamicVariables=1
+LeftMouseUpAction=[!PluginBang "MeterInput ExecuteBatch 1"]
+MouseOverAction=[!SetOption #CURRENTSECTION# This "FillColor 17,24,39,50"][!UpdateMeter *][!Redraw]
+MouseLeaveAction=[!SetOption #CURRENTSECTION# This "FillColor 17,24,39,100"][!UpdateMeter *][!Redraw]
+
+[Skin_Scale_Text]
+Meter=String
+Text=#Scale#
+MeterStyle=Box_Text
+
+[Div_1]
+Meter=Shape
+MeterStyle=Divider
+;============================================================================================================================;
+;                                                     Copy_Format                                                            ;
+;============================================================================================================================;
+[Copy_Format_String]
+Meter=String
+Text=Format will be copied to your clipboard 
+W=250
+ClipString=2
+MeterStyle=Left_String
+
+[Copy_Format_Input_Shape]
+Meter=Shape
+X=465
+Y=230
+Shape=Rectangle 0,0,100,40,8 |StrokeWidth 0 | Extend This 
+This=Fillcolor 17,24,39,100
+DynamicVariables=1
+MouseOverAction=[!SetOption #CURRENTSECTION# This "FillColor 17,24,39,50"][!UpdateMeter *][!Redraw]
+MouseLeaveAction=[!SetOption #CURRENTSECTION# This "FillColor 17,24,39,100"][!UpdateMeter *][!Redraw]
+LeftMouseUpAction=[!CommandMeasure Function "DropDown('EaseType', 'Animation_Input_Shape', 1,1)"]
+
+[Copy_Format _Text_1]
+Meter=String
+Text=#Format_Copy#
+X=(100/2)r
+MeterStyle=Box_Text
+[Div_2]
+Meter=Shape
+MeterStyle=Divider
+;============================================================================================================================;
+;                                                     Activation Behaviour                                                   ;
+;============================================================================================================================;
+[Activation_String]
+Meter=String
+Text=Activation Behaviour
+W=250
+ClipString=2
+MeterStyle=Left_String
+
+
+[Activation_Input_Shape]
+Meter=Shape
+X=415
+Y=305
+Shape=Rectangle 0,0,150,40,8 |StrokeWidth 0 | Extend This 
+This=Fillcolor 17,24,39,100
+DynamicVariables=1
+MouseOverAction=[!SetOption #CURRENTSECTION# This "FillColor 17,24,39,50"][!UpdateMeter *][!Redraw]
+MouseLeaveAction=[!SetOption #CURRENTSECTION# This "FillColor 17,24,39,100"][!UpdateMeter *][!Redraw]
+LeftMouseUpAction=[!CommandMeasure Function "DropDown('EaseType', 'Animation_Input_Shape', 1,1)"]
+
+[Activation_Text_1]
+Meter=String
+Text=Pick Color and Editor
+X=(150/2)r
+MeterStyle=Box_Text
+W=150
+FontSize=10
+[Div_3]
+Meter=Shape
+MeterStyle=Divider
+;============================================================================================================================;
+;                                                     Activation Shortcut                                                    ;
+;============================================================================================================================;
+[Shortcut_String]
+Meter=String
+Text=Activation Shortcut
+W=250
+ClipString=2
+MeterStyle=Left_String
+
+[Shortcut_Input_Shape]
+Meter=Shape
+X=415
+Y=380
+Shape=Rectangle 0,0,150,40,8 |StrokeWidth 0 | Extend This 
+This=Fillcolor 17,24,39,100
+DynamicVariables=1
+MouseOverAction=[!SetOption #CURRENTSECTION# This "FillColor 17,24,39,50"][!UpdateMeter *][!Redraw]
+MouseLeaveAction=[!SetOption #CURRENTSECTION# This "FillColor 17,24,39,100"][!UpdateMeter *][!Redraw]
+LeftMouseUpAction=[!CommandMeasure Function "DropDown('EaseType', 'Animation_Input_Shape', 1,1)"]
+
+[Shortcut_Text_1]
+Meter=String
+Text=#Key#
+X=(150/2)r
+MeterStyle=Box_Text
+
+[Div_4]
+Meter=Shape
+MeterStyle=Divider
+;============================================================================================================================;
+;                                                     Update                                                                 ;
+;============================================================================================================================;
+
+[Check_Update_String]
+Meter=String
+Text=Check Skin Update#CRLF#in BackGround
+MeterStyle=Left_String
+
+[Toggle_off_Image]
+Meter=Image
+ImageName=#@#Images\Config\on.png
+W=40
+H=40
+X=520
+Y=450
+LeftMouseUpAction=[!DeactivateConfig "ModernSearchBar\Update"][!Refresh]
+
+[Toggle_on_Image1]
+Meter=Image
+ImageName=#@#Images\Config\off.png
+W=40
+H=40
+X=520
+Y=450
+LeftMouseUpAction=[!ActivateConfig "ModernSearchBar\Update"][!Refresh]
+
+;============================================================================================================================;
+;                                                     Measure                                                                ;
+;============================================================================================================================;
+
+[MeterInput]
+Measure=Plugin
+Plugin=InputText.dll
+StringAlign=Center
+FontSize=15
+X=460
+Y=145
+W=100
+H=40
+AntiAlias=1
+FocusDismiss=1
+SolidColor=17,24,39
+FontColor=255,255,255
+Command1=[!WriteKeyValue Variables Scale "$UserInput$""#@#Vars.nek"][!RainmeterRefreshApp]
+DefaultValue="#Scale#"
+DynamicVariables=1
