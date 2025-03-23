@@ -12,13 +12,14 @@ end
 
 function hotkey()
     local isShowSkin = SKIN:GetMeasure('mToggle'):GetValue()
-    -- print(isShowSkin)
+    local sbehaviour = SKIN:GetVariable('Behaviour')
+    print(isShowSkin)
 
     if isShowSkin == 0 then
-        SKIN:Bang('!UpdateMeasure', 'mToggleSet')
+        SKIN:Bang('!UpdateMeasure', 'mToggle')
+        print("Editor is visible")
     end
     behaviour()
-
 end
 
 function picker()
@@ -26,7 +27,7 @@ function picker()
     -- print(isShowSkin)
 
     if isShowSkin == 0 then
-        SKIN:Bang('!UpdateMeasure', 'mToggleSet')
+        SKIN:Bang('!UpdateMeasure', 'mToggle')
     end
     SKIN:Bang('!CommandMeasure', 'YourPicker', '-mp')
     SKIN:Bang('!UpdateMeter', '*')
@@ -52,13 +53,15 @@ end
 
 function behaviour()
     local behaviour = SKIN:GetVariable('Behaviour')
+    local isShowSkin = SKIN:GetMeasure('mToggle'):GetValue()
+
     if behaviour == 'PE' or behaviour == 'P' then
         SKIN:Bang('!CommandMeasure', 'YourPicker', '-mp')
-        SKIN:Bang('!UpdateMeter', '*')
-        SKIN:Bang('!Redraw')
     elseif behaviour == 'E' then
-        SKIN:Bang('!UpdateMeasure', 'mToggle')
-
+        if isShowSkin == 0 then
+        else
+            SKIN:Bang('!UpdateMeasure', 'mToggle')
+        end
     end
 end
 
