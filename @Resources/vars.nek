@@ -1,16 +1,16 @@
 [Variables]
 Background_W=460
 Background_H=400
-Font_Color=255,255,255
-PrimaryColor=10,10,10
-SecondaryColor=200,200,200
+Font_Color=10,10,10
+PrimaryColor=255,255,255
+SecondaryColor=5,5,5
 Round=8
 Scale=1
 Opacity=200
 Active_Palette=1
 Key=LWin C
 Format_Copy=HSL
-Behaviour=PE
+Behaviour=E
 ;============================================================================================================================;
 ;                                          Formats Colors Hidden                                                             ;
 ;============================================================================================================================;
@@ -22,29 +22,29 @@ HSL_Hidden=0
 ;============================================================================================================================;
 ;                                          Formats Colors                                                                    ;
 ;============================================================================================================================;
-HSI=hsi(45, 48%, 74%)
-RGB=rgb(255, 214, 98)
-HSV=hsv(44, 61%, 100%)
-HEX=FFD662
-HSL=hsl(44, 100%, 69%)
+HSI=hsi(189, 71%, 57%)
+RGB=rgb(42, 184, 215)
+HSV=hsv(190, 80%, 84%)
+HEX=2AB8D7
+HSL=hsl(190, 68%, 50%)
 ;============================================================================================================================;
 ;                                          Palettes Colors                                                                   ;
 ;============================================================================================================================;
-Palettes_Color1=AF8612
-Palettes_Color2=D7AE3A
-Palettes_Color3=FFD662
-Palettes_Color4=FFFE8A
-Palettes_Color5=FFFFB2
+Palettes_Color1=006887
+Palettes_Color2=0290AF
+Palettes_Color3=2AB8D7
+Palettes_Color4=52E0FF
+Palettes_Color5=7AFFFF
 ;============================================================================================================================;
 ;                                          History Colors                                                                    ;
 ;============================================================================================================================;
-History_Color1=FFD662
-History_Color2=21A4D1
-History_Color3=FFD662
-History_Color4=FEE08A
-History_Color5=FFDD7C
-History_Color6=19374B
-History_Color7=22A6D0
+History_Color1=2AB8D7
+History_Color2=FFD662
+History_Color3=21A4D1
+History_Color4=FFD662
+History_Color5=FEE08A
+History_Color6=FFDD7C
+History_Color7=19374B
 ;============================================================================================================================;
 ;                                          Position                                                                          ;
 ;============================================================================================================================;
@@ -61,3 +61,4 @@ EaseType=OutSine
 AniDir=Bottom
 AniSteps=10
 AnimationDisplacement=30
+DarkMode=0

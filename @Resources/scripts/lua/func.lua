@@ -21,6 +21,19 @@ function hotkey()
 
 end
 
+function picker()
+    local isShowSkin = SKIN:GetMeasure('mToggle'):GetValue()
+    -- print(isShowSkin)
+
+    if isShowSkin == 0 then
+        SKIN:Bang('!UpdateMeasure', 'mToggleSet')
+    end
+    SKIN:Bang('!CommandMeasure', 'YourPicker', '-mp')
+    SKIN:Bang('!UpdateMeter', '*')
+    SKIN:Bang('!Redraw')
+
+end
+
 function trim(Text, Match, Replace)
     return Text:gsub(Match, Replace)
 end
