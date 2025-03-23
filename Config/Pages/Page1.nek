@@ -29,7 +29,7 @@ MeterStyle=Left_String
 
 [Skin_Input_Shape]
 Meter=Shape
-X=465
+X=615
 Y=145
 Shape=Rectangle 0,0,100,40,8 |StrokeWidth 0 | Extend This
 This=Fillcolor 17,24,39,100
@@ -53,14 +53,14 @@ MeterStyle=Divider
 [Copy_Format_String]
 Meter=String
 Text=Format will be copied to your clipboard
-W=210
+
 ClipString=2
 MeterStyle=Left_String
 
 [Copy_Format_Input_Shape]
 Meter=Shape
-X=415
-Y=230
+X=570
+Y=220
 Shape=Rectangle 0,0,150,40,8 |StrokeWidth 0 | Extend This
 This=Fillcolor 17,24,39,100
 DynamicVariables=1
@@ -84,20 +84,18 @@ MeterStyle=Divider
 [Activation_String]
 Meter=String
 Text=Activation Behaviour
-W=250
-ClipString=2
 MeterStyle=Left_String
 
 [Activation_Input_Shape]
 Meter=Shape
-X=415
+X=570
 Y=305
 Shape=Rectangle 0,0,150,40,8 |StrokeWidth 0 | Extend This
 This=Fillcolor 17,24,39,100
 DynamicVariables=1
 MouseOverAction=[!SetOption #CURRENTSECTION# This "FillColor 17,24,39,50"][!UpdateMeter *][!Redraw]
 MouseLeaveAction=[!SetOption #CURRENTSECTION# This "FillColor 17,24,39,100"][!UpdateMeter *][!Redraw]
-LeftMouseUpAction=[!CommandMeasure Function "DropDown('EaseType', 'Animation_Input_Shape', 1,1)"]
+LeftMouseUpAction=[!CommandMeasure Func "DropDown('behaviour', 'Activation_Input_Shape', 1,1)"]
 
 [Activation_Text_1]
 Meter=String
@@ -105,7 +103,7 @@ Text=Pick Color and Editor
 X=(150/2)r
 MeterStyle=Box_Text
 W=150
-FontSize=10
+ClipString=1
 
 [Div_3]
 Meter=Shape
@@ -123,7 +121,7 @@ MeterStyle=Left_String
 
 [Shortcut_Input_Shape]
 Meter=Shape
-X=415
+X=570
 Y=380
 Shape=Rectangle 0,0,150,40,8 |StrokeWidth 0 | Extend This
 This=Fillcolor 17,24,39,100
@@ -147,7 +145,7 @@ MeterStyle=Divider
 
 [Check_Update_String]
 Meter=String
-Text=Check Skin Update#CRLF#in BackGround
+Text=Check Skin Update in BackGround
 MeterStyle=Left_String
 
 [Toggle_off_Image]
@@ -155,7 +153,7 @@ Meter=Image
 ImageName=#@#Images\Config\on.png
 W=40
 H=40
-X=520
+X=680
 Y=450
 LeftMouseUpAction=[!DeactivateConfig "ModernSearchBar\Update"][!Refresh]
 
@@ -164,7 +162,7 @@ Meter=Image
 ImageName=#@#Images\Config\off.png
 W=40
 H=40
-X=520
+X=680
 Y=450
 LeftMouseUpAction=[!ActivateConfig "ModernSearchBar\Update"][!Refresh]
 ;============================================================================================================================;
