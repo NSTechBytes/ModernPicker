@@ -67,7 +67,7 @@ Corner=Round
 Measure=Plugin
 Plugin=YourPicker
 ReturnValue=Hex
-OnFinishAction=[!WriteKeyValue Variables Active_Palette  "1" "#@#vars.nek"][!SetVariable Active_Palette  "1"][!CommandMeasure convert_Color "convertColor('[YourPicker]')"][!CommandMeasure generate_Palette "generatePalette('[YourPicker]')"][!CommandMeasure Update_History "updateHistory()"][!UpdateMeasure mToggle][!UpdateMeter *][!Redraw]
+OnFinishAction=[!WriteKeyValue Variables Active_Palette  "1" "#@#vars.nek"][!SetVariable Active_Palette  "1"][!CommandMeasure convert_Color "convertColor('[YourPicker]')"][!CommandMeasure generate_Palette "generatePalette('[YourPicker]')"][!CommandMeasure Update_History "updateHistory()"][!CommandMeasure func "pickerBehaviour()"][!UpdateMeter *][!Redraw]
 DynamicVariables=1
 
 [Focus]

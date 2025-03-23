@@ -53,25 +53,25 @@ MeterStyle=Divider
 [Copy_Format_String]
 Meter=String
 Text=Format will be copied to your clipboard
-W=250
+W=210
 ClipString=2
 MeterStyle=Left_String
 
 [Copy_Format_Input_Shape]
 Meter=Shape
-X=465
+X=415
 Y=230
-Shape=Rectangle 0,0,100,40,8 |StrokeWidth 0 | Extend This
+Shape=Rectangle 0,0,150,40,8 |StrokeWidth 0 | Extend This
 This=Fillcolor 17,24,39,100
 DynamicVariables=1
 MouseOverAction=[!SetOption #CURRENTSECTION# This "FillColor 17,24,39,50"][!UpdateMeter *][!Redraw]
 MouseLeaveAction=[!SetOption #CURRENTSECTION# This "FillColor 17,24,39,100"][!UpdateMeter *][!Redraw]
-LeftMouseUpAction=[!CommandMeasure Function "DropDown('EaseType', 'Animation_Input_Shape', 1,1)"]
+LeftMouseUpAction=[!CommandMeasure func "DropDown('formatCopy', 'Copy_Format_Input_Shape', 1,1)"]
 
 [Copy_Format _Text_1]
 Meter=String
 Text=#Format_Copy#
-X=(100/2)r
+X=(150/2)r
 MeterStyle=Box_Text
 
 [Div_2]
@@ -130,7 +130,7 @@ This=Fillcolor 17,24,39,100
 DynamicVariables=1
 MouseOverAction=[!SetOption #CURRENTSECTION# This "FillColor 17,24,39,50"][!UpdateMeter *][!Redraw]
 MouseLeaveAction=[!SetOption #CURRENTSECTION# This "FillColor 17,24,39,100"][!UpdateMeter *][!Redraw]
-LeftMouseUpAction=[!CommandMeasure Function "DropDown('EaseType', 'Animation_Input_Shape', 1,1)"]
+LeftMouseUpAction=[!ActivateConfig "ModernPicker\WriteKey"]
 
 [Shortcut_Text_1]
 Meter=String

@@ -1,0 +1,30 @@
+[Open Picker and Editor_Shape]
+Meter=Shape
+Y=10r
+MeterStyle=Content_Shape_S
+
+[Open Picker and Editor]
+Meter=String
+MeterStyle=Content_Text
+FontSize=10
+LeftMouseUpAction=[!WriteKeyValue Variables Behaviour "PE"  "#@#Vars.nek"][!UpdateMEasure CloseToggle][!Delay 300][!RainmeterRefreshApp]
+
+[Only Picker_Shape]
+Meter=Shape
+MeterStyle=Content_Shape_S
+
+[Only Picker]
+Meter=String
+MeterStyle=Content_Text
+FontSize=10
+LeftMouseUpAction=[!WriteKeyValue Variables Behaviour "P"  "#@#Vars.nek"][!UpdateMEasure CloseToggle][!Delay 300][!RainmeterRefreshApp]
+
+[Only Editor_Shape]
+Meter=Shape
+MeterStyle=Content_Shape_S
+
+[Only Editor]
+Meter=String
+MeterStyle=Content_Text
+FontSize=10
+LeftMouseUpAction=[!WriteKeyValue Variables Behaviour "E"  "#@#Vars.nek"][!UpdateMEasure CloseToggle][!Delay 300][!RainmeterRefreshApp]

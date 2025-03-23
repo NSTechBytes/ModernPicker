@@ -1,0 +1,40 @@
+[RGB_Shape]
+Meter=Shape
+Y=10r
+MeterStyle=Content_Shape_S
+
+[RGB]
+Meter=String
+MeterStyle=Content_Text | Content_Text_2
+
+[HEX_Shape]
+Meter=Shape
+MeterStyle=Content_Shape_S
+
+[HEX]
+Meter=String
+MeterStyle=Content_Text | Content_Text_2
+
+[HSL_Shape]
+Meter=Shape
+MeterStyle=Content_Shape_S
+
+[HSL]
+Meter=String
+MeterStyle=Content_Text | Content_Text_2
+
+[HSV_Shape]
+Meter=Shape
+MeterStyle=Content_Shape_S
+
+[HSV]
+Meter=String
+MeterStyle=Content_Text | Content_Text_2
+
+[HSI_Shape]
+Meter=Shape
+MeterStyle=Content_Shape_S
+
+[HSI]
+Meter=String
+MeterStyle=Content_Text | Content_Text_2
