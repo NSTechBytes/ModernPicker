@@ -92,10 +92,6 @@ DynamicVariables=1
 Measure=Script
 ScriptFile=#@#scripts\lua\generate_Palette.lua
 
-[copy_Clipboard]
-Measure=Script
-ScriptFile=#@#scripts\lua\copy_Clipboard.lua
-
 [convert_Color]
 Measure=Script
 ScriptFile=#@#scripts\lua\convert_Color.lua

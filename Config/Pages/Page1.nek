@@ -1,5 +1,5 @@
 ;============================================================================================================================;
-;                                                     Function       s                                                       ;
+;                                                     Function                                                               ;
 ;============================================================================================================================;
 
 [MeasureName]
@@ -9,7 +9,6 @@ ConfigName=ModernSearchBar\Update
 IfCondition=[&MeasureName:IsActive(ModernSearchBar\Update)] = 1
 IfTrueAction=[!HideMeter Toggle_on_Image1][UpdateMeter *][!Redraw]
 DynamicVariables=1
-
 ;============================================================================================================================;
 ;                                                     Header                                                                 ;
 ;============================================================================================================================;
@@ -18,7 +17,6 @@ DynamicVariables=1
 Meter=String
 Text=General
 MeterStyle=Header_Style_Text
-
 ;============================================================================================================================;
 ;                                                     Scale                                                                  ;
 ;============================================================================================================================;
@@ -33,7 +31,7 @@ MeterStyle=Left_String
 Meter=Shape
 X=465
 Y=145
-Shape=Rectangle 0,0,100,40,8 |StrokeWidth 0 | Extend This 
+Shape=Rectangle 0,0,100,40,8 |StrokeWidth 0 | Extend This
 This=Fillcolor 17,24,39,100
 DynamicVariables=1
 LeftMouseUpAction=[!PluginBang "MeterInput ExecuteBatch 1"]
@@ -51,9 +49,10 @@ MeterStyle=Divider
 ;============================================================================================================================;
 ;                                                     Copy_Format                                                            ;
 ;============================================================================================================================;
+
 [Copy_Format_String]
 Meter=String
-Text=Format will be copied to your clipboard 
+Text=Format will be copied to your clipboard
 W=250
 ClipString=2
 MeterStyle=Left_String
@@ -62,7 +61,7 @@ MeterStyle=Left_String
 Meter=Shape
 X=465
 Y=230
-Shape=Rectangle 0,0,100,40,8 |StrokeWidth 0 | Extend This 
+Shape=Rectangle 0,0,100,40,8 |StrokeWidth 0 | Extend This
 This=Fillcolor 17,24,39,100
 DynamicVariables=1
 MouseOverAction=[!SetOption #CURRENTSECTION# This "FillColor 17,24,39,50"][!UpdateMeter *][!Redraw]
@@ -74,12 +73,14 @@ Meter=String
 Text=#Format_Copy#
 X=(100/2)r
 MeterStyle=Box_Text
+
 [Div_2]
 Meter=Shape
 MeterStyle=Divider
 ;============================================================================================================================;
 ;                                                     Activation Behaviour                                                   ;
 ;============================================================================================================================;
+
 [Activation_String]
 Meter=String
 Text=Activation Behaviour
@@ -87,12 +88,11 @@ W=250
 ClipString=2
 MeterStyle=Left_String
 
-
 [Activation_Input_Shape]
 Meter=Shape
 X=415
 Y=305
-Shape=Rectangle 0,0,150,40,8 |StrokeWidth 0 | Extend This 
+Shape=Rectangle 0,0,150,40,8 |StrokeWidth 0 | Extend This
 This=Fillcolor 17,24,39,100
 DynamicVariables=1
 MouseOverAction=[!SetOption #CURRENTSECTION# This "FillColor 17,24,39,50"][!UpdateMeter *][!Redraw]
@@ -106,12 +106,14 @@ X=(150/2)r
 MeterStyle=Box_Text
 W=150
 FontSize=10
+
 [Div_3]
 Meter=Shape
 MeterStyle=Divider
 ;============================================================================================================================;
 ;                                                     Activation Shortcut                                                    ;
 ;============================================================================================================================;
+
 [Shortcut_String]
 Meter=String
 Text=Activation Shortcut
@@ -123,7 +125,7 @@ MeterStyle=Left_String
 Meter=Shape
 X=415
 Y=380
-Shape=Rectangle 0,0,150,40,8 |StrokeWidth 0 | Extend This 
+Shape=Rectangle 0,0,150,40,8 |StrokeWidth 0 | Extend This
 This=Fillcolor 17,24,39,100
 DynamicVariables=1
 MouseOverAction=[!SetOption #CURRENTSECTION# This "FillColor 17,24,39,50"][!UpdateMeter *][!Redraw]
@@ -165,7 +167,6 @@ H=40
 X=520
 Y=450
 LeftMouseUpAction=[!ActivateConfig "ModernSearchBar\Update"][!Refresh]
-
 ;============================================================================================================================;
 ;                                                     Measure                                                                ;
 ;============================================================================================================================;
