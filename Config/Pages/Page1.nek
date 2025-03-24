@@ -1,13 +1,13 @@
 ;============================================================================================================================;
 ;                                                     Function                                                               ;
 ;============================================================================================================================;
-
 [MeasureName]
 Measure=Plugin
-Plugin=ConfigActive
-ConfigName=ModernSearchBar\Update
-IfCondition=[&MeasureName:IsActive(ModernSearchBar\Update)] = 1
-IfTrueAction=[!HideMeter Toggle_on_Image1][UpdateMeter *][!Redraw]
+Plugin=ActiveSkin
+SkinSection=ModernPicker\Update
+IfCondition=(MeasureName = 1)
+IfTrueAction=[!HideMeter Toggle_on_Image1][!UpdateMeter *][!Redraw]
+IfFalseAction=[!ShowMeter Toggle_on_Image1][!UpdateMeter *][!Redraw]
 DynamicVariables=1
 ;============================================================================================================================;
 ;                                                     Header                                                                 ;
@@ -155,7 +155,7 @@ W=40
 H=40
 X=680
 Y=450
-LeftMouseUpAction=[!DeactivateConfig "ModernSearchBar\Update"][!Refresh]
+LeftMouseUpAction=[!DeactivateConfig "ModernPicker\Update"][!Refresh]
 
 [Toggle_on_Image1]
 Meter=Image
@@ -164,7 +164,7 @@ W=40
 H=40
 X=680
 Y=450
-LeftMouseUpAction=[!ActivateConfig "ModernSearchBar\Update"][!Refresh]
+LeftMouseUpAction=[!ActivateConfig "ModernPicker\Update"][!Refresh]
 
 [Div_5]
 Meter=Shape
