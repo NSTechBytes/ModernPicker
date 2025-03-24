@@ -1,56 +1,170 @@
 ;============================================================================================================================;
-;                                                    Meter Styles                                                            ;
-;============================================================================================================================;
-[Social_Style]
-ImageName=#@#Images\Social\#CURRENTSECTION#.png
-W=60
-H=60
-X=20R
-Y=r
-DynamicVariables=1
-
-;============================================================================================================================;
-;                                                    Content                                                                 ;
+;                                                     Header                                                                 ;
 ;============================================================================================================================;
 
-[Header_Main_String]
+[Formats_String]
 Meter=String
-Text=About
-MeterStyle=Header_Style_Text
+Text=Formats
+X=180
+Y=40
+FOntSize=40
+AntiAlias=1
+FontWeight=900
+FontFace=Ubuntu
+FontColor=255,255,255
+;============================================================================================================================;
+;                                                    RGB                                                                     ;
+;============================================================================================================================;
 
-[Text_1]
+[RGB_String]
 Meter=String
-Text=Hi! I am Nasir Shahbaz a Developer#CRLF#and owner of NS Tech Bytes.This Project#CRLF#is Created to meet the requirement of#CRLF#the users.
+Text=RGB
 Y=150
 MeterStyle=Left_String
-[Text_2]
+
+[RGB_Image]
+Meter=Image
+ImageName=#@#Images\Config\on.png
+W=40
+H=40
+X=670
+Y=r
+LeftMouseUpAction=[!WriteKeyValue Variables RGB_Hidden 1 "#@#Vars.nek"][!Refresh "ModernPicker\Main"][!Refresh]
+
+[RGB_Image1]
+Meter=Image
+ImageName=#@#Images\Config\off.png
+W=40
+H=40
+X=670
+Y=r
+Hidden=(1-#RGB_Hidden#)
+LeftMouseUpAction=[!WriteKeyValue Variables RGB_Hidden 0 "#@#Vars.nek"][!Refresh "ModernPicker\Main"][!Refresh]
+
+[Div_1]
+Meter=Shape
+MeterStyle=Divider
+;============================================================================================================================;
+;                                                    HEX                                                                     ;
+;============================================================================================================================;
+
+[HEX_String]
 Meter=String
-Y=20R
-Text=If you have any answer and question.#CRLF#Let me know in discord server, Feel Free#CRLF#to use this special Project.
+Text=HEX
+Y=20r
 MeterStyle=Left_String
 
+[HEX_Image]
+Meter=Image
+ImageName=#@#Images\Config\on.png
+W=40
+H=40
+X=670
+Y=r
+LeftMouseUpAction=[!WriteKeyValue Variables HEX_Hidden 1 "#@#Vars.nek"][!Refresh "ModernPicker\Main"][!Refresh]
 
-[Social_Links_String]
+[HEX_Image1]
+Meter=Image
+ImageName=#@#Images\Config\off.png
+W=40
+H=40
+X=670
+Y=r
+Hidden=(1-#HEX_Hidden#)
+LeftMouseUpAction=[!WriteKeyValue Variables HEX_Hidden 0 "#@#Vars.nek"][!Refresh "ModernPicker\Main"][!Refresh]
+
+[Div_2]
+Meter=Shape
+MeterStyle=Divider
+;============================================================================================================================;
+;                                                    HSI                                                                     ;
+;============================================================================================================================;
+
+[HSI_String]
 Meter=String
-Y=20R
-Text=Join me on following platforms.
+Text=HSI
+Y=20r
 MeterStyle=Left_String
-[Youtube]
-Meter=Image
-X=r
-Y=20R
-MeterStyle=Social_Style
-LeftMouseUpAction=["https://www.youtube.com/@nstechbytes"]
-[Github]
-Meter=Image
-MeterStyle=Social_Style
-LeftMouseUpAction=["https://github.com/NSTechBytes"]
-[Deviantart]
-Meter=Image
-MeterStyle=Social_Style
-LeftMouseUpAction=["https://www.deviantart.com/nstechbytes"]
-[Discord]
-Meter=Image
-MeterStyle=Social_Style
-LeftMouseUpAction=["https://discord.gg/fZejMxtMhf"]
 
+[HSI_Image]
+Meter=Image
+ImageName=#@#Images\Config\on.png
+W=40
+H=40
+X=670
+Y=r
+LeftMouseUpAction=[!WriteKeyValue Variables HSI_Hidden 1 "#@#Vars.nek"][!Refresh "ModernPicker\Main"][!Refresh]
+
+[HSI_Image1]
+Meter=Image
+ImageName=#@#Images\Config\off.png
+W=40
+H=40
+X=670
+Y=r
+Hidden=(1-#HSI_Hidden#)
+LeftMouseUpAction=[!WriteKeyValue Variables HSI_Hidden 0 "#@#Vars.nek"][!Refresh "ModernPicker\Main"][!Refresh]
+
+[Div_3]
+Meter=Shape
+MeterStyle=Divider
+;============================================================================================================================;
+;                                                    HSV                                                                     ;
+;============================================================================================================================;
+
+[HSV_String]
+Meter=String
+Text=HSV
+Y=20r
+MeterStyle=Left_String
+
+[HSV_Image]
+Meter=Image
+ImageName=#@#Images\Config\on.png
+W=40
+H=40
+X=670
+Y=r
+LeftMouseUpAction=[!WriteKeyValue Variables HSV_Hidden 1 "#@#Vars.nek"][!Refresh "ModernPicker\Main"][!Refresh]
+
+[HSV_Image1]
+Meter=Image
+ImageName=#@#Images\Config\off.png
+W=40
+H=40
+X=670
+Y=r
+Hidden=(1-#HSV_Hidden#)
+LeftMouseUpAction=[!WriteKeyValue Variables HSV_Hidden 0 "#@#Vars.nek"][!Refresh "ModernPicker\Main"][!Refresh]
+
+[Div_4]
+Meter=Shape
+MeterStyle=Divider
+;============================================================================================================================;
+;                                                    HSL                                                                     ;
+;============================================================================================================================;
+
+[HSL_String]
+Meter=String
+Text=HSL
+Y=20r
+MeterStyle=Left_String
+
+[HSL_Image]
+Meter=Image
+ImageName=#@#Images\Config\on.png
+W=40
+H=40
+X=670
+Y=r
+LeftMouseUpAction=[!WriteKeyValue Variables HSL_Hidden 1 "#@#Vars.nek"][!Refresh "ModernPicker\Main"][!Refresh]
+
+[HSL_Image1]
+Meter=Image
+ImageName=#@#Images\Config\off.png
+W=40
+H=40
+X=670
+Y=r
+Hidden=(1-#HSL_Hidden#)
+LeftMouseUpAction=[!WriteKeyValue Variables HSL_Hidden 0 "#@#Vars.nek"][!Refresh "ModernPicker\Main"][!Refresh]

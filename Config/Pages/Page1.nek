@@ -102,7 +102,7 @@ Meter=String
 Text=Pick Color and Editor
 X=(150/2)r
 MeterStyle=Box_Text
-W=150
+W=130
 ClipString=1
 
 [Div_3]
