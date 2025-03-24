@@ -1,9 +1,12 @@
-function Initialize()
+function history()
     for i = 1, 7 do
         local color = SKIN:GetVariable('History_Color' .. i)
         if color == nil or color == '' then
             SKIN:Bang('!HideMeter', 'History_Ellipse_Color_' .. i)
-            -- print('History_Ellipse_Color_' .. i .. ' will be hidden')
+            --print('History_Ellipse_Color_' .. i .. ' will be hidden')
+        else
+            SKIN:Bang('!ShowMeter', 'History_Ellipse_Color_' .. i)
+            --print('History_Ellipse_Color_' .. i .. ' will be shown')
         end
     end
     SKIN:Bang('!UpdateMeter', '*')
@@ -54,7 +57,7 @@ end
 function behaviour()
     local behaviour = SKIN:GetVariable('Behaviour')
     local isShowSkin = SKIN:GetMeasure('mToggle'):GetValue()
-
+    history()
     if behaviour == 'PE' or behaviour == 'P' then
         SKIN:Bang('!CommandMeasure', 'YourPicker', '-mp')
     elseif behaviour == 'E' then

@@ -97,6 +97,6 @@ AntiAlias=1
 FocusDismiss=1
 SolidColor=17,24,39
 FontColor=255,255,255
-Command1=[!WriteKeyValue Variables AniSteps "$UserInput$""#@#Vars.nek"][!RainmeterRefreshApp]
+Command1=[!WriteKeyValue Variables AniSteps "$UserInput$""#@#Vars.nek"][!Refresh "ModernPicker\Main"][!Refresh]
 DefaultValue="#AniSteps#"
 DynamicVariables=1

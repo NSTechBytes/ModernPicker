@@ -7,7 +7,7 @@ MeterStyle=Content_Shape_S
 Meter=String
 MeterStyle=Content_Text
 FontSize=10
-LeftMouseUpAction=[!WriteKeyValue Variables Behaviour "PE"  "#@#Vars.nek"][!UpdateMEasure CloseToggle][!Delay 300][!RainmeterRefreshApp]
+LeftMouseUpAction=[!WriteKeyValue Variables Behaviour "PE"  "#@#Vars.nek"][!UpdateMEasure CloseToggle][!Delay 300][!Refresh "ModernPicker\Main"][!Refresh]
 
 [Only Picker_Shape]
 Meter=Shape
@@ -17,7 +17,7 @@ MeterStyle=Content_Shape_S
 Meter=String
 MeterStyle=Content_Text
 FontSize=10
-LeftMouseUpAction=[!WriteKeyValue Variables Behaviour "P"  "#@#Vars.nek"][!UpdateMEasure CloseToggle][!Delay 300][!RainmeterRefreshApp]
+LeftMouseUpAction=[!WriteKeyValue Variables Behaviour "P"  "#@#Vars.nek"][!UpdateMEasure CloseToggle][!Delay 300][!Refresh "ModernPicker\Main"][!Refresh]
 
 [Only Editor_Shape]
 Meter=Shape
@@ -27,4 +27,4 @@ MeterStyle=Content_Shape_S
 Meter=String
 MeterStyle=Content_Text
 FontSize=10
-LeftMouseUpAction=[!WriteKeyValue Variables Behaviour "E"  "#@#Vars.nek"][!UpdateMEasure CloseToggle][!Delay 300][!RainmeterRefreshApp]
+LeftMouseUpAction=[!WriteKeyValue Variables Behaviour "E"  "#@#Vars.nek"][!UpdateMEasure CloseToggle][!Delay 300][!Refresh "ModernPicker\Main"][!Refresh]

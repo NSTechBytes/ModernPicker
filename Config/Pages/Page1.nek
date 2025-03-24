@@ -165,6 +165,38 @@ H=40
 X=680
 Y=450
 LeftMouseUpAction=[!ActivateConfig "ModernSearchBar\Update"][!Refresh]
+
+[Div_5]
+Meter=Shape
+Y=55r
+MeterStyle=Divider
+;============================================================================================================================;
+;                                                     TrayIcon                                                               ;
+;============================================================================================================================;
+[Tray_Icon_String]
+Meter=String
+Text=Show Tray Icon
+MeterStyle=Left_String
+
+[TrayIcon_Image]
+Meter=Image
+ImageName=#@#Images\Config\on.png
+W=40
+H=40
+X=680
+Y=520
+LeftMouseUpAction=[!WriteKeyValue Variables ShowTray 0 "#@#Vars.nek"][!Refresh "ModernPicker\Main"][!Refresh]
+
+[TrayIcon_Image1]
+Meter=Image
+ImageName=#@#Images\Config\off.png
+W=40
+H=40
+X=680
+Y=520
+Hidden=#ShowTray#
+LeftMouseUpAction=[!WriteKeyValue Variables ShowTray 1 "#@#Vars.nek"][!Refresh "ModernPicker\Main"][!Refresh]
+
 ;============================================================================================================================;
 ;                                                     Measure                                                                ;
 ;============================================================================================================================;
@@ -182,6 +214,6 @@ AntiAlias=1
 FocusDismiss=1
 SolidColor=17,24,39
 FontColor=255,255,255
-Command1=[!WriteKeyValue Variables Scale "$UserInput$""#@#Vars.nek"][!RainmeterRefreshApp]
+Command1=[!WriteKeyValue Variables Scale "$UserInput$""#@#Vars.nek"][!Refresh "ModernPicker\Main"][!Refresh]
 DefaultValue="#Scale#"
 DynamicVariables=1

@@ -29,7 +29,7 @@ W=40
 H=40
 X=670
 Y=145
-LeftMouseUpAction=[!WriteKeyValue Variables DarkMode 0 "#@#Vars.nek"][!WriteKeyValue Variables Font_Color  10,10,10 "#@#Vars.nek"][!WriteKeyValue Variables PrimaryColor 255,255,255 "#@#Vars.nek"][!WriteKeyValue Variables SecondaryColor 5,5,5 "#@#Vars.nek][!WriteKeyValue Variables Opacity 200 "#@#Vars.nek"][!WriteKeyValue Variables Scale 1 "#@#Vars.nek"][!RainmeterRefreshApp]
+LeftMouseUpAction=[!WriteKeyValue Variables DarkMode 0 "#@#Vars.nek"][!WriteKeyValue Variables Font_Color  10,10,10 "#@#Vars.nek"][!WriteKeyValue Variables PrimaryColor 255,255,255 "#@#Vars.nek"][!WriteKeyValue Variables SecondaryColor 5,5,5 "#@#Vars.nek][!WriteKeyValue Variables Opacity 200 "#@#Vars.nek"][!WriteKeyValue Variables Scale 1 "#@#Vars.nek"][!Refresh "ModernPicker\Main"][!Refresh]
 
 [Dark_Mode_Image1]
 Meter=Image
@@ -39,7 +39,7 @@ H=40
 X=670
 Y=145
 Hidden=#DarkMode#
-LeftMouseUpAction=[!WriteKeyValue Variables DarkMode 1 "#@#Vars.nek"][!WriteKeyValue Variables Font_Color  255,255,255 "#@#Vars.nek"][!WriteKeyValue Variables PrimaryColor 10,10,10 "#@#Vars.nek"][!WriteKeyValue Variables SecondaryColor 200,200,200 "#@#Vars.nek][!WriteKeyValue Variables Opacity 200 "#@#Vars.nek"][!WriteKeyValue Variables Scale 1 "#@#Vars.nek"][!RainmeterRefreshApp]
+LeftMouseUpAction=[!WriteKeyValue Variables DarkMode 1 "#@#Vars.nek"][!WriteKeyValue Variables Font_Color  255,255,255 "#@#Vars.nek"][!WriteKeyValue Variables PrimaryColor 10,10,10 "#@#Vars.nek"][!WriteKeyValue Variables SecondaryColor 200,200,200 "#@#Vars.nek][!WriteKeyValue Variables Opacity 200 "#@#Vars.nek"][!WriteKeyValue Variables Scale 1 "#@#Vars.nek"][!Refresh "ModernPicker\Main"][!Refresh]
 
 [Div_1]
 Meter=Shape
@@ -86,6 +86,6 @@ AntiAlias=1
 FocusDismiss=1
 SolidColor=17,24,39
 FontColor=255,255,255
-Command1=[!WriteKeyValue Variables Opacity "$UserInput$""#@#Vars.nek"][!RainmeterRefreshApp]
+Command1=[!WriteKeyValue Variables Opacity "$UserInput$""#@#Vars.nek"][!Refresh "ModernPicker\Main"][!Refresh]
 DefaultValue="#Opacity#"
 DynamicVariables=1

@@ -11,6 +11,7 @@ IfCondition2=mToggle = 1
 IfTrueAction2=[!UpdateMeasure ACTIONUNLOAD]
 IfConditionMode=1
 DynamicVariables=1
+UpdateDivider=-1
 
 [mToggleSet]
 Measure=Calc
@@ -20,6 +21,7 @@ iftrueaction=[!UpdateMeasure mToggle]
 ifconditionmode=1
 Group=NUOL
 Disabled=1
+UpdateDivider=-1
 
 [ActionTimer]
 Measure=Plugin
@@ -31,18 +33,21 @@ Show=[!Show]
 Hide=[!Hide]
 In=[!CommandMeasure transition_Lua "tweenAnimation('in')"]
 Out=[!CommandMeasure transition_Lua "tweenAnimation('out')"]
+UpdateDivider=-1
 
 [ACTIONLOAD]
 Measure=String
 OnUpdateAction=[!CommandMeasure ActionTimer "Stop 2"][!CommandMeasure ActionTimer "Execute 1"]
 Disabled=1
 Group=NUOL
+UpdateDivider=-1
 
 [ACTIONUNLOAD]
 Measure=String
 OnUpdateAction=[!CommandMeasure ActionTimer "Stop 1"][!CommandMeasure ActionTimer "Execute 2"]
 Disabled=1
 Group=NUOL
+UpdateDivider=-1
 ;=======================================================================================================================;
 ;                                                Plugin Measures                                                        ;
 ;=======================================================================================================================;
@@ -52,9 +57,18 @@ Measure=Plugin
 Plugin=SkinTray
 Icon=#@#images\icon.ico
 ToolTipText=ModernPicker
-LeftMouseUpAction=[!CommandMeasure YourPicker  "-mp"][!UpdateMeter *][!Redraw]
-Disabled=1
-;RightMouseUpAction=[!SkinMenu]
+LeftMouseUpAction=[!CommandMeasure Func  "hotkey()"]
+Disabled=(1-#ShowTray#)
+DarkContext=#DarkMode#
+ContextMenuItemCount=3
+ContextMenuItem1=Settings
+ContextMenuAction1=[!ActivateConfig "ModernPicker\Config"]
+ContextMenuItem2=Show Editor
+ContextMenuAction2=[!UpdateMeasure mToggle]
+ContextMenuItem3=Exit
+ContextMenuAction3=[!DeactivateConfig]
+DynamicVariables=1
+UpdateDivider=-1
 
 [FrostBehind]
 Measure=Plugin
@@ -91,14 +105,17 @@ DynamicVariables=1
 [generate_Palette]
 Measure=Script
 ScriptFile=#@#scripts\lua\generate_Palette.lua
+UpdateDivider=-1
 
 [convert_Color]
 Measure=Script
 ScriptFile=#@#scripts\lua\convert_Color.lua
+UpdateDivider=-1
 
 [transition_Lua]
 Measure=Script
 ScriptFile=#@#scripts\lua\transition.lua
+UpdateDivider=-1
 
 [Update_History]
 Measure=Script

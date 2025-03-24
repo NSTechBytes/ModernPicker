@@ -30,7 +30,7 @@ Fill=Fill Color 255,255,255
 MouseOverAction=[!SetOption #CURRENTSECTION# Fill "Fill Color 200,200,200"][!UpdateMeter #CURRENTSECTION#][!Redraw]
 MouseLeaveAction=[!SetOption #CURRENTSECTION# Fill "Fill Color 255,255,255][!UpdateMeter #CURRENTSECTION#][!Redraw]
 Triangle=(26.5*0.50),(20*0.50) | LineTo (16.5*0.50),(40*0.50) | LineTo (36.5*0.50),(40*0.50) | ClosePath 1
-LeftMouseUpAction=[!WriteKeyvalue Variables Position #CURRENTSECTION# "#@#Vars.nek"][!RainmeterRefreshApp]
+LeftMouseUpAction=[!WriteKeyvalue Variables Position #CURRENTSECTION# "#@#Vars.nek"][!Refresh "ModernPicker\Main"][!Refresh]
 DirFill=Fill Color 100,100,100,200 | StrokeWidth 0
 [CurrentAlign:S]
 X=(((200-40)/3+10)*0.50)r
@@ -64,7 +64,7 @@ MeterStyle=Align:S
 Meter=Shape
 Shape2=Path Triangle | Extend DirFill | OffSet 0,(-2.5*0.50) | Rotate 0
 MeterStyle=Align:S
-LeftMouseUpAction=[!WriteKeyvalue Variables Position #CURRENTSECTION# "#@#Vars.nek"][!RainmeterRefreshApp]
+LeftMouseUpAction=[!WriteKeyvalue Variables Position #CURRENTSECTION# "#@#Vars.nek"][!Refresh "ModernPicker\Main"][!Refresh]
 [TR]
 Meter=Shape
 Shape2=Path Triangle | Extend DirFill | OffSet 0,(-2.5*0.50) | Rotate 45
@@ -75,7 +75,7 @@ X=((-(200-40)/3*2-20)*0.50)r
 Y=(((200-40)/3+10)*0.50)r
 Shape2=Path Triangle | Extend DirFill | OffSet 0,(-2.5*0.50) | Rotate 270
 MeterStyle=Align:S
-LeftMouseUpAction=[!WriteKeyvalue Variables Position #CURRENTSECTION# "#@#Vars.nek"][!RainmeterRefreshApp]
+LeftMouseUpAction=[!WriteKeyvalue Variables Position #CURRENTSECTION# "#@#Vars.nek"][!Refresh "ModernPicker\Main"][!Refresh]
 [CC]
 Meter=Shape
 Shape2=Ellipse ((200-40)/3/2*0.50),((200-40)/3/2*0.50),(10*0.50) | Extend DirFill
@@ -84,7 +84,7 @@ MeterStyle=Align:S
 Meter=Shape
 Shape2=Path Triangle | Extend DirFill  | OffSet 0,(-2.5*0.50) | Rotate 90
 MeterStyle=Align:S
-LeftMouseUpAction=[!WriteKeyvalue Variables Position #CURRENTSECTION# "#@#Vars.nek"][!RainmeterRefreshApp]
+LeftMouseUpAction=[!WriteKeyvalue Variables Position #CURRENTSECTION# "#@#Vars.nek"][!Refresh "ModernPicker\Main"][!Refresh]
 [BL]
 Meter=Shape
 X=((-(200-40)/3*2-20)*0.50)r
@@ -95,7 +95,7 @@ MeterStyle=Align:S
 Meter=Shape
 Shape2=Path Triangle | Extend DirFill | OffSet 0,(-2.5*0.50) | Rotate 180
 MeterStyle=Align:S
-LeftMouseUpAction=[!WriteKeyvalue Variables Position #CURRENTSECTION# "#@#Vars.nek"][!RainmeterRefreshApp]
+LeftMouseUpAction=[!WriteKeyvalue Variables Position #CURRENTSECTION# "#@#Vars.nek"][!Refresh "ModernPicker\Main"][!Refresh]
 [BR]
 Meter=Shape
 Shape2=Path Triangle | Extend DirFill | OffSet 0,(-2.5*0.50) | Rotate 135
@@ -188,7 +188,7 @@ AntiAlias=1
 FocusDismiss=1
 SolidColor=17,24,39
 FontColor=255,255,255
-Command1=[!WriteKeyValue Variables XPad "$UserInput$""#@#Vars.nek"][!RainmeterRefreshApp]
+Command1=[!WriteKeyValue Variables XPad "$UserInput$""#@#Vars.nek"][!Refresh "ModernPicker\Main"][!Refresh]
 DefaultValue="#XPad#"
 DynamicVariables=1
 
@@ -208,7 +208,7 @@ AntiAlias=1
 FocusDismiss=1
 SolidColor=17,24,39
 FontColor=255,255,255
-Command1=[!WriteKeyValue Variables YPad "$UserInput$""#@#Vars.nek"][!RainmeterRefreshApp]
+Command1=[!WriteKeyValue Variables YPad "$UserInput$""#@#Vars.nek"][!Refresh "ModernPicker\Main"][!Refresh]
 DefaultValue="#YPad#"
 DynamicVariables=1
 
@@ -227,6 +227,6 @@ AntiAlias=1
 FocusDismiss=1
 SolidColor=17,24,39
 FontColor=255,255,255
-Command1=[!WriteKeyValue Variables PreserveTaskbarSpace "$UserInput$""#@#Vars.nek"][!RainmeterRefreshApp]
+Command1=[!WriteKeyValue Variables PreserveTaskbarSpace "$UserInput$""#@#Vars.nek"][!Refresh "ModernPicker\Main"][!Refresh]
 DefaultValue="#PreserveTaskbarSpace#"
 DynamicVariables=1
