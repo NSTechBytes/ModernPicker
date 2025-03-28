@@ -51,24 +51,14 @@ UpdateDivider=-1
 ;=======================================================================================================================;
 ;                                                Plugin Measures                                                        ;
 ;=======================================================================================================================;
-
-[MeasureTray]
+[MeasureName]
 Measure=Plugin
-Plugin=SkinTray
-Icon=#@#images\icon.ico
-ToolTipText=ModernPicker
-LeftMouseUpAction=[!CommandMeasure Func  "hotkey()"]
-Disabled=(1-#ShowTray#)
-DarkContext=#DarkMode#
-ContextMenuItemCount=3
-ContextMenuItem1=Settings
-ContextMenuAction1=[!ActivateConfig "ModernPicker\Config"]
-ContextMenuItem2=Show Editor
-ContextMenuAction2=[!UpdateMeasure mToggle]
-ContextMenuItem3=Exit
-ContextMenuAction3=[!DeactivateConfig]
+Plugin=ActiveSkin
+SkinSection=ModernPicker\Main\TrayIcon
+IfCondition=(MeasureName = 1)
+IfFalseAction=[!ActivateConfig ModernPicker\Main\TrayIcon]
 DynamicVariables=1
-UpdateDivider=-1
+Disabled=(1-#ShowTray#)
 
 [FrostBehind]
 Measure=Plugin
