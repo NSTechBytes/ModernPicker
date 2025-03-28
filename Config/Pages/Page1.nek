@@ -185,7 +185,7 @@ W=40
 H=40
 X=680
 Y=520
-LeftMouseUpAction=[!WriteKeyValue Variables ShowTray 0 "#@#Vars.nek"][!Refresh "ModernPicker\Main"][!Refresh]
+LeftMouseUpAction=[!WriteKeyValue Variables ShowTray 0 "#@#Vars.nek"][!Refresh "ModernPicker\Main"][!Delay 100][!DeactivateConfig "ModernPicker\Main\TrayIcon"][!Refresh]
 
 [TrayIcon_Image1]
 Meter=Image
@@ -195,7 +195,7 @@ H=40
 X=680
 Y=520
 Hidden=#ShowTray#
-LeftMouseUpAction=[!WriteKeyValue Variables ShowTray 1 "#@#Vars.nek"][!Refresh "ModernPicker\Main"][!Refresh]
+LeftMouseUpAction=[!WriteKeyValue Variables ShowTray 1 "#@#Vars.nek"][!Refresh "ModernPicker\Main"][!Delay 100][!ActivateConfig "ModernPicker\Main\TrayIcon"][!Refresh]
 
 ;============================================================================================================================;
 ;                                                     Measure                                                                ;
