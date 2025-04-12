@@ -1,21 +1,21 @@
 [Variables]
 run_update=0
-
 ;============================================================================================================================;
 ;                                                     Meter Styles                                                           ;
 ;============================================================================================================================;
 
 [Not_Update]
 Shape=Rectangle 0,0,150,40,8 |StrokeWidth 0 | Fillcolor 56, 170, 26,100
+
 [Not_Update_Text]
 Text=Not Available
 
 [Available_Update]
 Shape=Rectangle 0,0,150,40,8 |StrokeWidth 0 | Fillcolor 194,37,34
 LeftMouseUpAction=[!CommandMeasure Update_Skin_Helper "Update_Skin"]
+
 [Available_Update_Text]
 Text=Update Now
-
 ;============================================================================================================================;
 ;                                                     Functions                                                              ;
 ;============================================================================================================================;
@@ -63,12 +63,12 @@ Meter=String
 Text=Update
 MeterStyle=Header_Style_Text
 
-
 [Version_String]
 Meter=String
 Text=Current Version
 Y=150
 MeterStyle=Left_String
+
 [Version_Input_Shape]
 Meter=Shape
 X=615
@@ -79,19 +79,21 @@ DynamicVariables=1
 MouseOverAction=[!SetOption #CURRENTSECTION# This "FillColor 17,24,39,50"][!UpdateMeter *][!Redraw]
 MouseLeaveAction=[!SetOption #CURRENTSECTION# This "FillColor 17,24,39,100"][!UpdateMeter *][!Redraw]
 LeftMouseUpAction=
+
 [Version_Text]
 Meter=String
 Text=v\\#version#
 MeterStyle=Box_Text
+
 [Div_1]
 Meter=Shape
 MeterStyle=Divider
-
 
 [Update_String]
 Meter=String
 Text=Update Status
 MeterStyle=Left_String
+
 [Update_Input_Shape]
 Meter=Shape
 X=570
@@ -99,6 +101,7 @@ Y=-8r
 DynamicVariables=1
 MeterStyle=Not_Update
 Group=Upate
+
 [Update_Box_Text]
 Meter=String
 X=(150/2)r
@@ -107,3 +110,27 @@ MeterStyle=Box_Text | Not_Update_Text
 Group=Upate
 DynamicVariables=1
 
+[Information_Background]
+Meter=Shape
+X=180
+Y=480
+Shape=Rectangle 0,0,550,80 ,8| StrokeWidth 0 | FillColor 251,222,4,30
+DynamicVariables=1
+
+[Information_Image]
+Meter=Image
+ImageName=#@#Images\Information.png
+W=40
+H=40
+X=20r
+Y=15r
+
+[Information_string]
+Meter=string
+Text=If you're using Rainmeter in portable mode, you'll need to manually update ModernPicker using this link:#CRLF#https://github.com/NSTechBytes/ModernPicker/releases/
+W=500
+FontColor=255,255,255
+ClipString=2
+X=10R
+Y=r
+Antialias=1
