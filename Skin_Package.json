@@ -1,9 +1,9 @@
 {
     "name": "ModernPicker",
     "author": "nstechbytes",
-    "version": "v1.1",
+    "version": "v1.2",
     "loadtype": "Skin",
-    "load": "ModernPicker\\Main\\Main.ini",
+    "load": "ModernPicker\\WelCOme\\Main.ini",
     "MinimumRainmeter": "4.5",
     "MinimumWindows": "10.0",
     "plugins": [
