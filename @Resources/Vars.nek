@@ -11,7 +11,7 @@ Opacity=200
 ;                                         Config                                                                             ;
 ;============================================================================================================================;
 Active_Palette=1
-Key=LWin  C
+Key=LWin Shift C
 Format_Copy=RGB
 Behaviour=PE
 Skin.Name=ModernPicker

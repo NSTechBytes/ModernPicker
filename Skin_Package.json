@@ -1,0 +1,19 @@
+{
+    "name": "ModernPicker",
+    "author": "nstechbytes",
+    "version": "v1.1",
+    "loadtype": "Skin",
+    "load": "ModernPicker\\Main\\Main.ini",
+    "MinimumRainmeter": "4.5",
+    "MinimumWindows": "10.0",
+    "plugins": [
+        "FrostBehind",
+        "YourPicker",
+        "PowershellRM",
+        "Focus",
+        "SkinTray",
+        "Hotkey",
+        "ActiveSkin",
+        "KeyCodeInfo"
+    ]
+}
